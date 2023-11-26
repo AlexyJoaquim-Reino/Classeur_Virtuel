@@ -102,7 +102,12 @@ const cartesJSON = {
     conteneur.appendChild(cardDiv);
     }
 }
-    
+
+    document.addEventListener('DOMContentLoaded', function() {
+    chargerCartes();
+  }); 
+
+  
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
    
