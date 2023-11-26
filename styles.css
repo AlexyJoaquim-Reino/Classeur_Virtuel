@@ -16,7 +16,6 @@
     vertical-align:middle;
     margin: 20px 10px;
     animation: haloCard 15s ease infinite;
-    transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'effet d'agrandissement */
 }
 
 .card > span {
@@ -194,4 +193,5 @@ p {
     left: 50%;
     transform: translate(-50%, -50%) scale(4); /* Ajustez la valeur de l'échelle selon vos besoins */
     z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
+    transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'effet d'agrandissement */
 }
