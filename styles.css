@@ -85,6 +85,13 @@
 
 }
 
+/* Ajoutez une classe spécifique pour les images à l'intérieur des cartes */
+.card img {
+    max-width: 100%; /* La largeur maximale est égale à la largeur du conteneur parent */
+    height: auto; /* Maintient le rapport hauteur/largeur de l'image */
+  }
+  
+
 
 
 .operator {
