@@ -75,7 +75,9 @@ const cartesJSON = {
       cardDiv.classList.add('card');
 
     // Ajoute un gestionnaire d'événements pour chaque carte
-    cardDiv.addEventListener('click', () => agrandirCarte(cardDiv));
+    cardDiv.addEventListener('click', function () {
+        agrandirCarte(cardDiv);
+    });
 
     // Crée un élément img avec l'URL de l'image
     const imgElement = document.createElement('img');
@@ -98,22 +100,18 @@ const cartesJSON = {
     // Détache la classe 'agrandie' des autres cartes
     const cartes = conteneur.getElementsByClassName('card');
     for (let i = 0; i < cartes.length; i++) {
-        if (cartes[i] !== carte && cartes[i].classList.contains('agrandie')) {
-            cartes[i].classList.remove('agrandie');
-        }
+        cartes[i].classList.remove('agrandie');
     }
 
-    carte.classList.toggle('agrandie');
+    carte.classList.add('agrandie');
   
-    // Vérifie si la carte n'est pas déjà le premier enfant du conteneur
-    if (carte !== conteneur.firstChild) {
     // Détache la carte de son parent
     carte.parentElement.removeChild(carte);
 
     // Ajoute la carte au début du conteneur
     conteneur.insertAdjacentElement('afterbegin', carte);
-    }
 }
+
 
 // Appel de la fonction pour charger les cartes
 chargerCartes();
