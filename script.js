@@ -95,8 +95,9 @@ const cartesJSON = {
     carte.parentElement.removeChild(carte);
   
     // Ajoute la carte au début du conteneur
-    conteneur.insertBefore(carte, conteneur.firstChild);
+    conteneur.insertAdjacentElement('afterbegin', carte);
   
     carte.classList.toggle('agrandie');
   }
+  
   
