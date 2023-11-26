@@ -3,10 +3,10 @@ jQuery.noConflict();
 
 
 
-$(document).ready(function() {
+function dollars () {
     var $cards = $(".card");
     var $style = $(".hover");
-});
+};
 
 $cards.on("mousemove", function(e) {
     var $card = $(this);
