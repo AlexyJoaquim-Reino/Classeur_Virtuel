@@ -90,9 +90,9 @@ const cartesJSON = {
   
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
-
+  
     // Déplace la carte vers le début du conteneur pour qu'elle soit centrée
-    conteneur.insertBefore(carte, conteneur.firstChild);
+    conteneur.insertAdjacentElement('afterbegin', carte);
   
     carte.classList.toggle('agrandie');
   }
