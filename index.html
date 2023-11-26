@@ -26,14 +26,6 @@
     
       // Boucle pour créer les éléments div
       for (let i = 1; i <= numberOfCards; i++) {
-        // Crée un élément div
-        const cardDiv = document.createElement('div');
-    
-        // Ajoute la classe "card" à tous les éléments div
-        cardDiv.classList.add('card');
-    
-        // Ajoute une classe spécifique en fonction de l'indice i
-        cardDiv.classList.add(`card${i}`);
     
         // Ajoute l'élément div au conteneur
         document.getElementById('card-container').appendChild(cardDiv);
