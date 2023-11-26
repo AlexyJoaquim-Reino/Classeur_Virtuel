@@ -1,4 +1,7 @@
 
+jQuery.noConflict();
+
+
 var $cards = $(".card");
 var $style = $(".hover");
 
