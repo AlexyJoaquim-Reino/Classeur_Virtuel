@@ -25,13 +25,16 @@
       // Nombre total de cartes
       const numberOfCards = 8;
       const cardDiv = document.createElement('div');
+      const imgElement = document.createElement('img');
+    
 
       cardDiv.innerHTML = document.getElementById('card-container');
       // Boucle pour créer les éléments div
       for (let i = 1; i <= numberOfCards; i++) {
-    
+        imgElement.src = carte.url;
+        imgElement.alt = carte.nom;
         // Ajoute l'élément div au conteneur
-        appendChild(cardDiv);
+        cardDiv.appendChild(imgElement);
       }
     </script>
     
