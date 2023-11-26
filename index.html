@@ -35,43 +35,6 @@
         xhr.send(null);
     }
 
-    // Fonction pour créer les éléments div avec les images
-    function creerCartes() {
-        chargerJSON(function (response) {
-        // Parse le fichier JSON
-        var cartes = JSON.parse(response).cartes;
-
-        // Récupère le conteneur
-        var conteneur = document.getElementById('card-container');
-
-        // Boucle pour créer les éléments div avec les images
-        for (var i = 0; i < cartes.length; i++) {
-            var carte = cartes[i];
-
-            // Crée un élément div
-            var cardDiv = document.createElement('div');
-
-            // Ajoute la classe "card" à tous les éléments div
-            cardDiv.classList.add('card');
-
-            // Ajoute une classe spécifique en fonction du nom de la carte
-            cardDiv.classList.add(carte.nom);
-
-            // Crée un élément img
-            var imgElement = document.createElement('img');
-            imgElement.src = carte.url;
-
-            // Ajoute l'élément img à l'élément div
-            cardDiv.appendChild(imgElement);
-
-            // Ajoute l'élément div au conteneur
-            conteneur.appendChild(cardDiv);
-        }
-        });
-    }
-
-    // Appelle la fonction pour créer les cartes
-    creerCartes();
     </script>
 
 </main>
