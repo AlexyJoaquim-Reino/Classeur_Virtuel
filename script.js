@@ -107,7 +107,7 @@ const cartesJSON = {
     chargerCartes();
   }); 
 
-  
+
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
    
