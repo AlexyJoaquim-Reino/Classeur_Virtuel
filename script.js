@@ -96,13 +96,13 @@ const cartesJSON = {
     // Détache la classe 'agrandie' des autres cartes
     const cartes = conteneur.getElementsByClassName('card');
     for (let i = 0; i < cartes.length; i++) {
-    if (cartes[i] !== carte && cartes[i].classList.contains('agrandie')) {
+        if (cartes[i] !== carte && cartes[i].classList.contains('agrandie')) {
         cartes[i].classList.remove('agrandie');
-    }
+        }
     }
 
     carte.classList.toggle('agrandie');
-    }
+}
 
     // Appel de la fonction pour charger les cartes
     chargerCartes();
