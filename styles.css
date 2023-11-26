@@ -185,3 +185,17 @@ p {
     perspective: 1000px;
 
 }
+
+
+.card.agrandie {
+    width: 400px;
+    height: 600px;
+    margin: 0;
+}
+  
+  #card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
