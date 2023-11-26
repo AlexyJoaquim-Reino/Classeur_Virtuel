@@ -73,7 +73,7 @@ const cartesJSON = {
       // Crée un élément div pour la carte
       const cardDiv = document.createElement('div');
       cardDiv.classList.add('card');
-      cardDiv.onclick = function () { agrandirCarte(cardDiv); };
+      cardDiv.onclick = function () { agrandirCarte(this); };
   
       // Crée un élément img avec l'URL de l'image
       const imgElement = document.createElement('img');
