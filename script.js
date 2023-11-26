@@ -120,12 +120,9 @@ const cartesJSON = {
     }
 
     carte.classList.add('agrandie');
-  
-    // Détache la carte de son parent
-    carte.parentElement.removeChild(carte);
 
     // Ajoute la carte au début du conteneur
-    conteneur.insertAdjacentElement('afterbegin', carte);
+    conteneur.insertBefore(carte, conteneur.firstChild);
 }
 
 
