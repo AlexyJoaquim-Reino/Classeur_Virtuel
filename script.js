@@ -74,25 +74,24 @@ const cartesJSON = {
       const cardDiv = document.createElement('div');
       cardDiv.classList.add('card');
 
-       // Utilise une fonction anonyme pour capturer la valeur actuelle de cardDiv
-    (function (currentCardDiv) {
-        cardDiv.onclick = function () { agrandirCarte(currentCardDiv); };
-      })(cardDiv);
+    // Ajoute un gestionnaire d'événements pour chaque carte
+    cardDiv.addEventListener('click', function () {
+        agrandirCarte(cardDiv);
+    });
 
-  
-      // Crée un élément img avec l'URL de l'image
-      const imgElement = document.createElement('img');
-      imgElement.src = carte.url;
-      imgElement.alt = carte.nom;
-  
-      // Ajoute l'élément img à l'élément div
-      cardDiv.appendChild(imgElement);
-  
-      // Ajoute l'élément div au conteneur
-      conteneur.appendChild(cardDiv);
+    // Crée un élément img avec l'URL de l'image
+    const imgElement = document.createElement('img');
+    imgElement.src = carte.url;
+    imgElement.alt = carte.nom;
+
+    // Ajoute l'élément img à l'élément div
+    cardDiv.appendChild(imgElement);
+
+    // Ajoute l'élément div au conteneur
+    conteneur.appendChild(cardDiv);
     }
-  }
-  
+}
+    
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
     conteneur.appendChild(carte);
@@ -102,7 +101,7 @@ const cartesJSON = {
     const cartes = conteneur.getElementsByClassName('card');
     for (let i = 0; i < cartes.length; i++) {
         if (cartes[i] !== carte && cartes[i].classList.contains('agrandie')) {
-        cartes[i].classList.remove('agrandie');
+            cartes[i].classList.remove('agrandie');
         }
     }
 
