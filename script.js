@@ -2,8 +2,11 @@
 jQuery.noConflict();
 
 
-var $cards = $(".card");
-var $style = $(".hover");
+
+$(document).ready(function() {
+    var $cards = $(".card");
+    var $style = $(".hover");
+});
 
 $cards.on("mousemove", function(e) {
     var $card = $(this);
