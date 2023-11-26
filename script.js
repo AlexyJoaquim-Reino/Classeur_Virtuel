@@ -75,9 +75,7 @@ const cartesJSON = {
       cardDiv.classList.add('card');
 
     // Ajoute un gestionnaire d'événements pour chaque carte
-    cardDiv.addEventListener('click', function () {
-        agrandirCarte(cardDiv);
-    });
+    cardDiv.addEventListener('click', () => agrandirCarte(cardDiv));
 
     // Crée un élément img avec l'URL de l'image
     const imgElement = document.createElement('img');
@@ -108,8 +106,8 @@ const cartesJSON = {
     carte.classList.toggle('agrandie');
 }
 
-    // Appel de la fonction pour charger les cartes
-    chargerCartes();
+// Appel de la fonction pour charger les cartes
+chargerCartes();
 
   
 
