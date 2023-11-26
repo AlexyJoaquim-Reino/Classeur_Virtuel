@@ -90,8 +90,13 @@ const cartesJSON = {
   
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
+    
+    // Détache la carte de son parent
+    carte.parentElement.removeChild(carte);
   
-    conteneur.appendChild(carte);
+    // Ajoute la carte au début du conteneur
+    conteneur.insertBefore(carte, conteneur.firstChild);
+  
     carte.classList.toggle('agrandie');
   }
   
