@@ -92,7 +92,7 @@ const cartesJSON = {
     
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
-    conteneur.appendChild(carte);
+   
    
     
     // Détache la classe 'agrandie' des autres cartes
@@ -104,6 +104,15 @@ const cartesJSON = {
     }
 
     carte.classList.toggle('agrandie');
+  
+    // Vérifie si la carte n'est pas déjà le premier enfant du conteneur
+    if (carte !== conteneur.firstChild) {
+    // Détache la carte de son parent
+    carte.parentElement.removeChild(carte);
+
+    // Ajoute la carte au début du conteneur
+    conteneur.insertAdjacentElement('afterbegin', carte);
+    }
 }
 
 // Appel de la fonction pour charger les cartes
