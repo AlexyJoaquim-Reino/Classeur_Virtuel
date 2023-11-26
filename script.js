@@ -74,6 +74,10 @@ const cartesJSON = {
     return;
   }
 
+    // Assurez-vous que le conteneur est vide avant d'ajouter des cartes
+    conteneur.innerHTML = '';
+
+    
     // Récupère les informations sur les cartes du JSON
     const cartes = cartesJSON.cartes;
   
