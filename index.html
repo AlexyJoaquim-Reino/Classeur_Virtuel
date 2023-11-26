@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classeur Virtuel de Cartes créées sur Photoshop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main id="app">
+
+    <h1> Cartes créées sur Photoshop avec ajout d'un effet CSS pour ajouter de la brillance </h1>
+
+   
+
+
+    <style class="hover"></style>
+
+
+    <div id="card-container"></div>
+
+    <script>
+      // Nombre total de cartes
+      const numberOfCards = 8;
+    
+      // Boucle pour créer les éléments div
+      for (let i = 1; i <= numberOfCards; i++) {
+        // Crée un élément div
+        const cardDiv = document.createElement('div');
+    
+        // Ajoute la classe "card" à tous les éléments div
+        cardDiv.classList.add('card');
+    
+        // Ajoute une classe spécifique en fonction de l'indice i
+        cardDiv.classList.add(`card${i}`);
+    
+        // Ajoute l'élément div au conteneur
+        document.getElementById('card-container').appendChild(cardDiv);
+      }
+    </script>
+    
+
+    <div id="card-container"></div>
+
+    <script>
+    // Fonction pour charger le fichier JSON
+    function chargerJSON(callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.overrideMimeType("application/json");
+        xhr.open('GET', 'image_cartes.json', true);
+        xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == "200") {
+            callback(xhr.responseText);
+        }
+        };
+        xhr.send(null);
+    }
+
+    // Fonction pour créer les éléments div avec les images
+    function creerCartes() {
+        chargerJSON(function (response) {
+        // Parse le fichier JSON
+        var cartes = JSON.parse(response).cartes;
+
+        // Récupère le conteneur
+        var conteneur = document.getElementById('card-container');
+
+        // Boucle pour créer les éléments div avec les images
+        for (var i = 0; i < cartes.length; i++) {
+            var carte = cartes[i];
+
+            // Crée un élément div
+            var cardDiv = document.createElement('div');
+
+            // Ajoute la classe "card" à tous les éléments div
+            cardDiv.classList.add('card');
+
+            // Ajoute une classe spécifique en fonction du nom de la carte
+            cardDiv.classList.add(carte.nom);
+
+            // Crée un élément img
+            var imgElement = document.createElement('img');
+            imgElement.src = carte.url;
+
+            // Ajoute l'élément img à l'élément div
+            cardDiv.appendChild(imgElement);
+
+            // Ajoute l'élément div au conteneur
+            conteneur.appendChild(cardDiv);
+        }
+        });
+    }
+
+    // Appelle la fonction pour créer les cartes
+    creerCartes();
+    </script>
+
+</main>
+
+</body>
+</html>

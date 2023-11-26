@@ -1,0 +1,37 @@
+{
+    "cartes": [
+      {
+        "nom": "card1",
+        "url": "https://imgur.com/xiJF6at.png"
+      },
+      {
+        "nom": "card2",
+        "url": "chemin/vers/votre/image2.jpg"
+      },
+      {
+        "nom": "card3",
+        "url": "chemin/vers/votre/image3.jpg"
+      },
+      {
+        "nom": "card4",
+        "url": "chemin/vers/votre/image4.jpg"
+      },
+      {
+        "nom": "card5",
+        "url": "chemin/vers/votre/image5.jpg"
+      },
+      {
+        "nom": "card6",
+        "url": "chemin/vers/votre/image6.jpg"
+      },
+      {
+        "nom": "card7",
+        "url": "chemin/vers/votre/image7.jpg"
+      },
+      {
+        "nom": "card8",
+        "url": "chemin/vers/votre/image8.jpg"
+      }
+    ]
+  }
+  
