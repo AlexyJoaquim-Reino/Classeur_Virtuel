@@ -68,6 +68,12 @@ const cartesJSON = {
   function chargerCartes() {
     const conteneur = document.getElementById('card-container');
   
+     // Assurez-vous que l'élément avec l'ID 'card-container' existe avant de continuer
+    if (!conteneur) {
+    console.error("Erreur : L'élément avec l'ID 'card-container' n'a pas été trouvé.");
+    return;
+  }
+
     // Récupère les informations sur les cartes du JSON
     const cartes = cartesJSON.cartes;
   
