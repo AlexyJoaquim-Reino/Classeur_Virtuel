@@ -192,6 +192,6 @@ p {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.5); /* Ajustez la valeur de l'échelle selon vos besoins */
+    transform: translate(-50%, -50%) scale(4); /* Ajustez la valeur de l'échelle selon vos besoins */
     z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
 }
