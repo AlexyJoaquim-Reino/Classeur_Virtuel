@@ -112,7 +112,6 @@ const cartesJSON = {
     const conteneur = document.getElementById('card-container');
    
    
-    
     // Détache la classe 'agrandie' des autres cartes
     const cartes = conteneur.getElementsByClassName('card');
     for (let i = 0; i < cartes.length; i++) {

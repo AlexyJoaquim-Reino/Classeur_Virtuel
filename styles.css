@@ -188,14 +188,9 @@ p {
 
 
 .card.agrandie {
-    width: 400px;
-    height: 600px;
-    margin: 0;
-}
-  
-  #card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
 }
