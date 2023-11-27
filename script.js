@@ -140,9 +140,6 @@ const cartesJSON = {
     carteAgrandie.innerHTML = `<img src="${carte.querySelector('img').src}" alt="${carte.querySelector('img').alt}">`;
     carteAgrandie.style.display = 'block';
   }
-  
-  // Appel de la fonction pour charger les cartes
-  chargerCartes();
 
   
 
