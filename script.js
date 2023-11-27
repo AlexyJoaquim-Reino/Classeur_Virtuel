@@ -114,7 +114,7 @@ const cartesJSON = {
 
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
-    const carteAgrandie = document.getElementById('carte-agrandie');
+    
 
    
     // Détache la classe 'agrandie' des autres cartes
@@ -125,25 +125,20 @@ const cartesJSON = {
 
     carte.classList.add('agrandie');
 
-    // Si la carte agrandie existe déjà, remplace simplement l'image
-  if (carteAgrandie) {
-    carteAgrandie.src = carte.querySelector('img').src;
-  } else {
-    // Sinon, crée un nouvel élément img pour la carte agrandie
+    // Crée un élément img pour la carte agrandie
     const imgAgrandie = document.createElement('img');
     imgAgrandie.src = carte.querySelector('img').src;
     imgAgrandie.alt = carte.querySelector('img').alt;
 
     // Crée un nouvel élément div pour la carte agrandie
     const divAgrandie = document.createElement('div');
-    divAgrandie.id = 'carte-agrandie';
+    divAgrandie.classList.add('carte-agrandie');
     divAgrandie.appendChild(imgAgrandie);
 
     // Ajoute le nouvel élément div au conteneur
     conteneur.appendChild(divAgrandie);
   }
 
-}
 
 
 // Appel de la fonction pour charger les cartes

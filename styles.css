@@ -195,3 +195,12 @@ p {
     z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
     transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'effet d'agrandissement */
 }
+
+.carte-agrandie {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5); /* Ajustez la valeur de l'échelle selon vos besoins */
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'effet d'agrandissement */
+  }
