@@ -117,7 +117,7 @@ const cartesJSON = {
     
 
 
-    for (let i = 0; i < cartes.length; i++) {
+    for (let i = 0; i < 3; i++) {
         cartes[i].classList.remove('agrandie');
     }
 
