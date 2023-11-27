@@ -143,6 +143,9 @@ const cartesJSON = {
     carteAgrandie.innerHTML = `<img src="${carte.querySelector('img').src}" alt="${carte.querySelector('img').alt}">`;
     carteAgrandie.style.display = 'block';
 
+    // Désactiver les effets de mise en page normaux pendant l'agrandissement
+    document.body.style.overflow = 'hidden';
+
     // Positionner la carte agrandie absolument par rapport au conteneur
     const conteneurRect = conteneur.getBoundingClientRect();
     const imgRect = carteAgrandie.getBoundingClientRect();
@@ -154,6 +157,11 @@ const cartesJSON = {
     carteAgrandie.style.left = leftPos + 'px';
   }
 
+  function reinitialiserEffet() {
+    // Réactiver les effets de mise en page normaux après l'agrandissement
+    document.body.style.overflow = 'auto';
+  }
+  
   
 
   
