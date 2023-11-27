@@ -87,7 +87,7 @@ const cartesJSON = {
       cardDiv.classList.add('card');
 
     // Ajoute un gestionnaire d'événements pour chaque carte
-    cardDiv.addEventListener('click', function () {
+      cardDiv.addEventListener('click', function () {
         agrandirCarte(cardDiv);
     });
 
@@ -108,11 +108,13 @@ const cartesJSON = {
 
 
   function agrandirCarte(carte) {
-  
-    for (let i = 0; i < cartes.length; i++) {
-        cartes[i].classList.remove('agrandie');
+    // Désactive la carte agrandie précédente
+    const carteAgrandiePrecedente = document.querySelector('.agrandie');
+    if (carteAgrandiePrecedente) {
+      carteAgrandiePrecedente.classList.remove('agrandie');
     }
 
+    // Ajoute la classe 'agrandie' à la carte cliquée
     carte.classList.add('agrandie');
 
     // Récupère l'URL de l'image de la carte
@@ -124,9 +126,8 @@ const cartesJSON = {
     carteAgrandie.style.display = 'block';
   }
 
-
-// Appel de la fonction pour charger les cartes
-document.addEventListener('DOMContentLoaded', chargerCartes);
+  // Appelle la fonction pour charger les cartes lors du chargement de la page
+  document.addEventListener('DOMContentLoaded', chargerCartes);
 
   
 
