@@ -106,7 +106,24 @@ const cartesJSON = {
   
   document.addEventListener('DOMContentLoaded', function () {
     chargerCartes();
+    activerEffetAgrandissement();
   });
+
+  function activerEffetAgrandissement() {
+    const toutesLesCartes = document.querySelectorAll('.card');
+  
+    toutesLesCartes.forEach(carte => {
+      carte.addEventListener('mouseenter', function () {
+        agrandirCarte(carte);
+      });
+  
+      carte.addEventListener('mouseleave', function () {
+        // Réinitialiser l'effet au survol lorsque la souris quitte la carte
+        toutesLesCartes.forEach(c => c.classList.remove('agrandie'));
+        document.getElementById('carte-agrandie').style.display = 'none';
+      });
+    });
+  }
   
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
@@ -118,18 +135,10 @@ const cartesJSON = {
   
     carte.classList.add('agrandie');
   
-    // Crée un élément img pour la carte agrandie
-    const imgAgrandie = document.createElement('img');
-    imgAgrandie.src = carte.querySelector('img').src;
-    imgAgrandie.alt = carte.querySelector('img').alt;
-  
-    // Crée un nouvel élément div pour la carte agrandie
-    const divAgrandie = document.createElement('div');
-    divAgrandie.classList.add('carte-agrandie');
-    divAgrandie.appendChild(imgAgrandie);
-  
-    // Ajoute le nouvel élément div au conteneur
-    conteneur.appendChild(divAgrandie);
+    // Afficher la carte agrandie au centre avec le même style de survol
+    const carteAgrandie = document.getElementById('carte-agrandie');
+    carteAgrandie.innerHTML = `<img src="${carte.querySelector('img').src}" alt="${carte.querySelector('img').alt}">`;
+    carteAgrandie.style.display = 'block';
   }
   
   // Appel de la fonction pour charger les cartes
