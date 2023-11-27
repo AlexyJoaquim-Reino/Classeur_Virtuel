@@ -195,3 +195,31 @@ p {
     z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
     transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'effet d'agrandissement */
 }
+
+.card:hover {
+    transform: scale(1.2) translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
+}
+
+ /* Styles pour la carte agrandie au centre */
+#carte-agrandie {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    z-index: 9999;
+    display: none;
+}
+
+#carte-agrandie img {
+    width: 200px; /* Ajustez la taille selon vos besoins */
+    height: 300px;
+    border: 2px solid red; /* Exemple de bordure rouge au survol */
+    transition: border 0.3s ease-in-out;
+}
+
+#carte-agrandie:hover img {
+    border: 2px solid green; /* Exemple de bordure verte au survol */
+}
+
