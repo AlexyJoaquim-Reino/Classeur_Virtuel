@@ -1,7 +1,6 @@
+const cartes = document.querySelectorAll('.card');
 
 jQuery.noConflict();
-
-
 
 function dollars () {
     var $cards = $(".card");
@@ -63,7 +62,6 @@ const cartesJSON = {
     ]
   };
 
- 
   function chargerCartes() {
     const conteneur = document.getElementById('card-container');
   
