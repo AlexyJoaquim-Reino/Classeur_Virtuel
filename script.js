@@ -129,16 +129,29 @@ const cartesJSON = {
     const conteneur = document.getElementById('card-container');
   
     const toutesLesCartes = document.querySelectorAll('.card');
-    toutesLesCartes.forEach(carte => {
-    carte.classList.remove('agrandie');
+    toutesLesCartes.forEach(c => {
+    c.classList.remove('agrandie');
     });
   
     carte.classList.add('agrandie');
   
     // Afficher la carte agrandie au centre avec le même style de survol
     const carteAgrandie = document.getElementById('carte-agrandie');
+    const imgSrc = carte.querySelector('img').src;
+    const imgAlt = carte.querySelector('img').alt;
+
     carteAgrandie.innerHTML = `<img src="${carte.querySelector('img').src}" alt="${carte.querySelector('img').alt}">`;
     carteAgrandie.style.display = 'block';
+
+    // Positionner la carte agrandie absolument par rapport au conteneur
+    const conteneurRect = conteneur.getBoundingClientRect();
+    const imgRect = carteAgrandie.getBoundingClientRect();
+
+    const topPos = (conteneurRect.height - imgRect.height) / 2;
+    const leftPos = (conteneurRect.width - imgRect.width) / 2;
+
+    carteAgrandie.style.top = topPos + 'px';
+    carteAgrandie.style.left = leftPos + 'px';
   }
 
   
