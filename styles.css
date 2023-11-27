@@ -186,27 +186,12 @@ p {
 
 }
 
-.card:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
 
-#carte-agrandie {
+.card.agrandie {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(2);
-    z-index: 9999;
-    display: none;
-}
-
-#carte-agrandie img {
-    width: 960px; /* Ajustez la taille selon vos besoins */
-    height: 1338px;
-    border: 2px solid red; /* Exemple de bordure rouge au survol */
-    transition: border 0.3s ease-in-out;
-  }
-
-#carte-agrandie:hover img {
-    border: 2px solid green; /* Exemple de bordure verte au survol */
+    transform: translate(-50%, -50%) scale(4); /* Ajustez la valeur de l'échelle selon vos besoins */
+    z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
+    transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'effet d'agrandissement */
 }
