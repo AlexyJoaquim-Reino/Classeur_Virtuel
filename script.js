@@ -64,83 +64,78 @@ const cartesJSON = {
   };
 
  
-  
   function chargerCartes() {
     const conteneur = document.getElementById('card-container');
   
-     // Assurez-vous que l'élément avec l'ID 'card-container' existe avant de continuer
+    // Assurez-vous que l'élément avec l'ID 'card-container' existe avant de continuer
     if (!conteneur) {
-    console.error("Erreur : L'élément avec l'ID 'card-container' n'a pas été trouvé.");
-    return;
-  }
-
+      console.error("Erreur : L'élément avec l'ID 'card-container' n'a pas été trouvé.");
+      return;
+    }
+  
+    // Simulation d'une chaîne JSON
+    // Convertissez la chaîne JSON en un objet JavaScript avec JSON.parse
+    const imagesJson = cartesJSON.cartes;
+  
     // Assurez-vous que le conteneur est vide avant d'ajouter des cartes
     conteneur.innerHTML = '';
-
-    
-    // Récupère les informations sur les cartes du JSON
-    const cartes = cartesJSON.cartes;
   
     // Boucle pour créer les éléments HTML pour chaque carte
-    for (let i = 0; i < cartes.length; i++) {
-      const carte = cartes[i];
+    for (let i = 0; i < imagesJson.length; i++) {
+      const carte = imagesJson[i];
   
       // Crée un élément div pour la carte
       const cardDiv = document.createElement('div');
       cardDiv.classList.add('card');
-
-    // Ajoute un gestionnaire d'événements pour chaque carte
-    cardDiv.addEventListener('click', function () {
+  
+      // Ajoute un gestionnaire d'événements pour chaque carte
+      cardDiv.addEventListener('click', function () {
         agrandirCarte(cardDiv);
-    });
-
-    // Crée un élément img avec l'URL de l'image
-    const imgElement = document.createElement('img');
-    imgElement.src = carte.url;
-    imgElement.alt = carte.nom;
-
-    // Ajoute l'élément img à l'élément div
-    cardDiv.appendChild(imgElement);
-
-    // Ajoute l'élément div au conteneur
-    conteneur.appendChild(cardDiv);
+      });
+  
+      // Crée un élément img avec l'URL de l'image
+      const imgElement = document.createElement('img');
+      imgElement.src = carte.url;
+      imgElement.alt = carte.nom;
+  
+      // Ajoute l'élément img à l'élément div
+      cardDiv.appendChild(imgElement);
+  
+      // Ajoute l'élément div au conteneur
+      conteneur.appendChild(cardDiv);
     }
-}
-
-    document.addEventListener('DOMContentLoaded', function() {
+  }
+  
+  document.addEventListener('DOMContentLoaded', function () {
     chargerCartes();
-  }); 
-
-
+  });
+  
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
-    
-
-
-    for (let i = 0; i < 3; i++) {
-        cartes[i].classList.remove('agrandie');
-    }
-
+  
+    const toutesLesCartes = document.querySelectorAll('.card');
+    toutesLesCartes.forEach(carte => {
+    carte.classList.remove('agrandie');
+    });
+  
     carte.classList.add('agrandie');
-
+  
     // Crée un élément img pour la carte agrandie
     const imgAgrandie = document.createElement('img');
     imgAgrandie.src = carte.querySelector('img').src;
     imgAgrandie.alt = carte.querySelector('img').alt;
-
+  
     // Crée un nouvel élément div pour la carte agrandie
     const divAgrandie = document.createElement('div');
     divAgrandie.classList.add('carte-agrandie');
     divAgrandie.appendChild(imgAgrandie);
-
+  
     // Ajoute le nouvel élément div au conteneur
     conteneur.appendChild(divAgrandie);
   }
-
-
-
-// Appel de la fonction pour charger les cartes
-chargerCartes();
+  
+  // Appel de la fonction pour charger les cartes
+  chargerCartes();
 
   
 
