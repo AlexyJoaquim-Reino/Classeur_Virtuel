@@ -93,11 +93,7 @@ const cartesJSON = {
       // Ajoute l'élément div au conteneur
       conteneur.appendChild(cardDiv);
     }
-  }
-
-    document.addEventListener('DOMContentLoaded', function() {
-    chargerCartes();
-  }); 
+  }; 
 
 
   function agrandirCarte(carte) {
