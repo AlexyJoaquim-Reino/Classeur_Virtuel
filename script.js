@@ -6,7 +6,7 @@ function dollars () {
     var $cards = $(".card");
     var $style = $(".hover");
     $cards.on("mousemove", function(e) {
-        var $card = $(this);
+    var $card = $(this);
     var l = e.offsetX;
     var t = e.offsetY;
     var h = $card.height();
@@ -115,6 +115,7 @@ const cartesJSON = {
     toutesLesCartes.forEach(carte => {
       carte.addEventListener('mouseenter', function () {
         agrandirCarte(carte);
+        carte.classList.add('agrandie'); // Ajout de la classe 'agrandie'
       });
   
       carte.addEventListener('mouseleave', function () {
