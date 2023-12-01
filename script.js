@@ -127,31 +127,23 @@ const cartesJSON = {
   
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
-  
-    const toutesLesCartes = document.querySelectorAll('.card');
-    toutesLesCartes.forEach(c => {
-    c.classList.remove('agrandie');
-    });
-  
-    carte.classList.add('agrandie');
-  
-    // Afficher la carte agrandie au centre avec le même style de survol
     const carteAgrandie = document.getElementById('carte-agrandie');
-    const imgSrc = carte.querySelector('img').src;
-    const imgAlt = carte.querySelector('img').alt;
-
-    carteAgrandie.innerHTML = `<img src="${carte.querySelector('img').src}" alt="${carte.querySelector('img').alt}">`;
-    carteAgrandie.style.display = 'block';
-
+  
     // Désactiver les effets de mise en page normaux pendant l'agrandissement
     document.body.style.overflow = 'hidden';
 
+    // Copier le contenu de la carte dans la carte agrandie
+    carteAgrandie.innerHTML = carte.innerHTML;
+  
+    // Afficher la carte agrandie
+    carteAgrandie.style.display = 'block';
+
     // Positionner la carte agrandie absolument par rapport au conteneur
     const conteneurRect = conteneur.getBoundingClientRect();
-    const imgRect = carteAgrandie.getBoundingClientRect();
+    const carteRect = carte.getBoundingClientRect();
 
-    const topPos = (conteneurRect.height - imgRect.height) / 2;
-    const leftPos = (conteneurRect.width - imgRect.width) / 2;
+    const topPos = (conteneurRect.height - carteRect.height) / 2;
+    const leftPos = (conteneurRect.width - carteRect.width) / 2;
 
     carteAgrandie.style.top = topPos + 'px';
     carteAgrandie.style.left = leftPos + 'px';
@@ -161,6 +153,16 @@ const cartesJSON = {
     // Réactiver les effets de mise en page normaux après l'agrandissement
     document.body.style.overflow = 'auto';
   }
+
+  function reduireCarte(carte) {
+    // ... (votre code existant)
+
+    // Retirez la classe agrandie de la carte
+    carte.classList.remove('agrandie');
+
+    // Réactivez le défilement du corps lorsque la carte n'est plus agrandie
+    document.body.style.overflow = 'auto';
+};
   
   
 
