@@ -136,6 +136,11 @@ const cartesJSON = {
 
     // Désactiver les effets de mise en page normaux pendant l'agrandissement
     document.body.style.overflow = 'hidden';
+
+    // Centrer la carte agrandie
+    carteAgrandie.style.top = '50%';
+    carteAgrandie.style.left = '50%';
+    carteAgrandie.style.transform = 'translate(-50%, -50%)';
 }
 
 function reduireCarte() {
@@ -147,6 +152,7 @@ function reduireCarte() {
   // Réactiver les effets de mise en page normaux après l'agrandissement
   document.body.style.overflow = 'auto';
 }
+
 
   
   
