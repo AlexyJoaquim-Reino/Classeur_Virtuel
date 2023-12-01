@@ -1,25 +1,23 @@
 const cartes = document.querySelectorAll('.card');
 
-jQuery.noConflict();
-
 function dollars () {
     var $cards = $(".card");
 
     $cards.on("mousemove", function(e) {
-    var $card = $(this);
-    var l = e.offsetX;
-    var t = e.offsetY;
-    var h = $card.height();
-    var w = $card.width();   
-    var lp = Math.abs(Math.floor(100 / w * l)-100);
-    var tp = Math.abs(Math.floor(100 / h * t)-100);
-    var bg = 'background-position: ${lp}% ${tp}%;'
-
-
-    $cards.removeClass("active");
-    $card.addClass("active").attr("style", bg);
+      var $card = $(this);
+      var l = e.offsetX;
+      var t = e.offsetY;
+      var h = $card.height();
+      var w = $card.width();   
+      var lp = Math.abs(Math.floor(100 / w * l)-100);
+      var tp = Math.abs(Math.floor(100 / h * t)-100);
+      var bg = 'background-position: ' + lp + '% ' + tp + '%;';
+      var style = '.card.active:before { ' + bg + ' }';
+      $cards.removeClass("active");
+      $card.addClass("active");
+      $(".hover").html(style); // Utilisez directement la classe .hover ici
     }).on("mouseout", function() {
-        $cards.removeClass("active").removeAttr("style");
+        $cards.removeClass("active");
     });
 }
 
@@ -64,6 +62,7 @@ const cartesJSON = {
 
   document.addEventListener('DOMContentLoaded', function () {
     chargerCartes();
+    dollars(); 
   });
 
   function chargerCartes() {
@@ -101,9 +100,6 @@ const cartesJSON = {
       // Ajoute l'élément div au conteneur
       conteneur.appendChild(cardDiv);
     }
-
-    // Appeler la fonction dollars après avoir chargé les cartes
-    dollars();
   }
   
 
