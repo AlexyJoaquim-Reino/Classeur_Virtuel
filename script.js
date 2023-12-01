@@ -109,30 +109,6 @@ const cartesJSON = {
   }
   
 
-  function agrandirCarte(carte) {
-    const carteAgrandie = document.getElementById('carte-agrandie');
-    const imgSrc = carte.querySelector('img').src;
-
-    console.log("Agrandir carte", imgSrc); // Ajout de cette ligne pour le débogage
-
-    // Afficher la carte agrandie
-    carteAgrandie.innerHTML = `<img src="${imgSrc}" alt="Objet agrandi">`;
-    carteAgrandie.classList.add('agrandie');
-
-    // Désactiver les effets de mise en page normaux pendant l'agrandissement
-    document.body.style.overflow = 'hidden';
-}
-
-function reduireCarte() {
-  const carteAgrandie = document.getElementById('carte-agrandie');
-
-  // Cacher la carte agrandie
-  carteAgrandie.style.display = 'none';
-
-  // Réactiver les effets de mise en page normaux après l'agrandissement
-  document.body.style.overflow = 'auto';
-}
-
 
 
 
