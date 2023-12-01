@@ -240,9 +240,16 @@ p {
 }
 
 .agrandie {
+    display: block !important;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.2);
-    z-index: 999;
+    z-index: 9999;
+}
+
+.agrandie img {
+    width: 640px;
+    height: 1338px;
+    transition: border 0.3s ease-in-out;
 }
