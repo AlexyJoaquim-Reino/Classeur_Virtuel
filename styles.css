@@ -169,11 +169,12 @@ p {
 
 
 #app {
-    position:relative;
-    perspective: 1000px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajustez la hauteur selon vos besoins */
 }
-
 
 .card.agrandie {
     position: absolute;
@@ -203,5 +204,12 @@ p {
     z-index: 9999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
 }
 
-
-
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacement entre les cartes, ajustez selon vos besoins */
+    max-width: 1200px; /* Largeur maximale de la boîte des cartes, ajustez selon vos besoins */
+    margin: 0 auto; /* Centrer la boîte des cartes horizontalement */
+}
