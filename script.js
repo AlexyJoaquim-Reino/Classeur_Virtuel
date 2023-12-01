@@ -1,9 +1,11 @@
 const cartes = document.querySelectorAll('.card');
 
 function dollars () {
+    console.log("La fonction dollars est appelée !");
     var $cards = $(".card");
 
     $cards.on("mousemove", function(e) {
+      console.log("Souris déplacée sur une carte !");
       var $card = $(this);
       var l = e.offsetX;
       var t = e.offsetY;
@@ -17,6 +19,7 @@ function dollars () {
       $card.addClass("active");
       $(".hover").html(style); // Utilisez directement la classe .hover ici
     }).on("mouseout", function() {
+        console.log("Souris sortie de la carte !");
         $cards.removeClass("active");
     });
 }
