@@ -210,6 +210,6 @@ p {
     justify-content: center;
     align-items: center;
     gap: 20px; /* Espacement entre les cartes, ajustez selon vos besoins */
-    max-width: 1200px; /* Largeur maximale de la boîte des cartes, ajustez selon vos besoins */
+    max-width: 1500px; /* Largeur maximale de la boîte des cartes, ajustez selon vos besoins */
     margin: 0 auto; /* Centrer la boîte des cartes horizontalement */
 }
