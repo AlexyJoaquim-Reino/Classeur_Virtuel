@@ -62,6 +62,10 @@ const cartesJSON = {
     ]
   };
 
+  document.addEventListener('DOMContentLoaded', function () {
+    chargerCartes();
+  });
+
   function chargerCartes() {
     const conteneur = document.getElementById('card-container');
   
@@ -87,7 +91,7 @@ const cartesJSON = {
       cardDiv.classList.add('card');
   
       // Ajoute un gestionnaire d'événements pour chaque carte
-      cardDiv.addEventListener('click', function () {
+      cardDiv.addEventListener('mouseenter', function () {
         agrandirCarte(cardDiv);
       });
   
@@ -104,28 +108,6 @@ const cartesJSON = {
     }
   }
   
-  document.addEventListener('DOMContentLoaded', function () {
-    chargerCartes();
-    activerEffetAgrandissement();
-  });
-
-  function activerEffetAgrandissement() {
-    const toutesLesCartes = document.querySelectorAll('.card');
-  
-    toutesLesCartes.forEach(carte => {
-      carte.addEventListener('mouseenter', function () {
-        agrandirCarte(carte);
-        carte.classList.add('agrandie'); // Ajout de la classe 'agrandie'
-      });
-  
-      carte.addEventListener('mouseleave', function () {
-        // Réinitialiser l'effet au survol lorsque la souris quitte la carte
-        toutesLesCartes.forEach(c => c.classList.remove('agrandie'));
-        document.getElementById('carte-agrandie').style.display = 'none';
-      });
-    });
-  }
-  
 
   function agrandirCarte(carte) {
     const carteAgrandie = document.getElementById('carte-agrandie');
@@ -135,25 +117,11 @@ const cartesJSON = {
 
     // Afficher la carte agrandie
     carteAgrandie.innerHTML = `<img src="${imgSrc}" alt="Objet agrandi">`;
-    carteAgrandie.style.display = 'block';
+    carteAgrandie.classList.add('agrandie');
 
     // Désactiver les effets de mise en page normaux pendant l'agrandissement
     document.body.style.overflow = 'hidden';
-
-    // Ajouter une classe à la carte agrandie pour appliquer des styles spécifiques
-    carteAgrandie.classList.add('agrandie');
 }
-
-function reduireCarte() {
-  const carteAgrandie = document.getElementById('carte-agrandie');
-
-  // Cacher la carte agrandie
-  carteAgrandie.style.display = 'none';
-
-  // Réactiver les effets de mise en page normaux après l'agrandissement
-  document.body.style.overflow = 'auto';
-}
-
 
 
 
