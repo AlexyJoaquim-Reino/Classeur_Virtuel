@@ -2,9 +2,9 @@ const cartes = document.querySelectorAll('.card');
 
 jQuery.noConflict();
 
-    var $style = $(".hover");
 function dollars () {
     var $cards = $(".card");
+
     $cards.on("mousemove", function(e) {
     var $card = $(this);
     var l = e.offsetX;
@@ -14,14 +14,14 @@ function dollars () {
     var lp = Math.abs(Math.floor(100 / w * l)-100);
     var tp = Math.abs(Math.floor(100 / h * t)-100);
     var bg = 'background-position: ${lp}% ${tp}%;'
-    var style = 'card.active:before { ${bg} }'
+
+
     $cards.removeClass("active");
-    $card.addClass("active");
-    $style.html(style);
+    $card.addClass("active").attr("style", bg);
     }).on("mouseout", function() {
-        $cards.removeClass("active");
+        $cards.removeClass("active").removeAttr("style");
     });
-};
+}
 
 
 // Exemple de structure JSON avec les informations sur les images des cartes
