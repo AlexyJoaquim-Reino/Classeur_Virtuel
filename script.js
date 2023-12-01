@@ -2,9 +2,9 @@ const cartes = document.querySelectorAll('.card');
 
 jQuery.noConflict();
 
+    var $style = $(".hover");
 function dollars () {
     var $cards = $(".card");
-    var $style = $(".hover");
     $cards.on("mousemove", function(e) {
     var $card = $(this);
     var l = e.offsetX;
@@ -101,6 +101,9 @@ const cartesJSON = {
       // Ajoute l'élément div au conteneur
       conteneur.appendChild(cardDiv);
     }
+
+    // Appeler la fonction dollars après avoir chargé les cartes
+    dollars();
   }
   
 
