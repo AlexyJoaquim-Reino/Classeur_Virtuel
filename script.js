@@ -123,6 +123,17 @@ const cartesJSON = {
     document.body.style.overflow = 'hidden';
 }
 
+function reduireCarte() {
+  const carteAgrandie = document.getElementById('carte-agrandie');
+
+  // Cacher la carte agrandie
+  carteAgrandie.style.display = 'none';
+
+  // Réactiver les effets de mise en page normaux après l'agrandissement
+  document.body.style.overflow = 'auto';
+}
+
+
 
 
 
