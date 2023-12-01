@@ -164,9 +164,10 @@ const cartesJSON = {
     // Retirez la classe agrandie de la carte
     carte.classList.remove('agrandie');
 
-    // Réactivez le défilement du corps lorsque la carte n'est plus agrandie
-    document.body.style.overflow = 'auto';
 };
+
+  // Réactivez le défilement du corps lorsque la carte n'est plus agrandie
+  document.body.style.overflow = 'auto';
   
   
 
