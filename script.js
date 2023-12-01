@@ -131,17 +131,14 @@ const cartesJSON = {
     const carteAgrandie = document.getElementById('carte-agrandie');
     const imgSrc = carte.querySelector('img').src;
 
+    console.log("Agrandir carte", imgSrc); // Ajout de cette ligne pour le débogage
+
     // Afficher la carte agrandie
     carteAgrandie.innerHTML = `<img src="${imgSrc}" alt="Objet agrandi">`;
     carteAgrandie.style.display = 'block';
 
     // Désactiver les effets de mise en page normaux pendant l'agrandissement
     document.body.style.overflow = 'hidden';
-
-    // Centrer la carte agrandie
-    carteAgrandie.style.top = '50%';
-    carteAgrandie.style.left = '50%';
-    carteAgrandie.style.transform = 'translate(-50%, -50%)';
 }
 
 function reduireCarte() {
