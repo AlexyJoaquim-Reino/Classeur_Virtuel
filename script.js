@@ -1,3 +1,5 @@
+const cartes = document.querySelectorAll('.card');
+
 jQuery.noConflict();
 
 function dollars () {
