@@ -240,8 +240,8 @@ p {
 }
 
 #carte-agrandie img {
-    width:960px;
-    height: 1338px;
+    width: 200px; /* Ajustez la taille selon vos besoins */
+    height: 300px;
     border: 2px solid red; /* Exemple de bordure rouge au survol */
     transition: border 0.3s ease-in-out;
 }
