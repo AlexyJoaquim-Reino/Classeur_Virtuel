@@ -1,3 +1,7 @@
+const cartes = document.querySelectorAll('.card');
+
+jQuery.noConflict();
+
 function dollars () {
     var $cards = $(".card");
     var $style = $(".hover");
