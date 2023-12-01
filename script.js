@@ -154,6 +154,38 @@ function reduireCarte() {
 }
 
 
+// Importer TweenMax de GSAP
+const { TweenMax, Power0 } = window;
+
+// Sélectionner l'élément que vous souhaitez animer
+const card = document.querySelector('.card');
+
+// Définir l'animation
+const haloCardAnimation = () => {
+  TweenMax.to(card, 1, {
+    transform: 'none',
+    fontSize: '100px',
+    ease: Power0.easeNone,
+  });
+
+  TweenMax.to(card, 1, {
+    transform: 'rotateZ(-3deg) rotateX(-7deg) rotateY(6deg)',
+    ease: Power0.easeNone,
+    delay: 0.25,
+  });
+
+  TweenMax.to(card, 1, {
+    transform: 'rotateZ(3deg) rotateX(7deg) rotateY(-6deg)',
+    ease: Power0.easeNone,
+    delay: 0.66,
+  });
+};
+
+// Appliquer l'animation au survol
+card.addEventListener('mouseenter', haloCardAnimation);
+
+
+
   
   
 
