@@ -140,7 +140,7 @@ const cartesJSON = {
 
     // Positionner la carte agrandie absolument par rapport au conteneur
     const conteneurRect = conteneur.getBoundingClientRect();
-    const carteRect = carte.getBoundingClientRect();
+    const carteRect = carteAgrandie.getBoundingClientRect();
 
     const topPos = (conteneurRect.height - carteRect.height) / 2;
     const leftPos = (conteneurRect.width - carteRect.width) / 2;
