@@ -125,49 +125,29 @@ const cartesJSON = {
     });
   }
   
+
   function agrandirCarte(carte) {
-    const conteneur = document.getElementById('card-container');
-    const toutesLesCartes = document.querySelectorAll('.card');
-    toutesLesCartes.forEach(c => {
-        c.classList.remove('agrandie');
-    });
-    
-    carte.classList.add('agrandie');
-
-
     const carteAgrandie = document.getElementById('carte-agrandie');
-    carteAgrandie.innerHTML = carte.innerHTML;
+    const imgSrc = carte.querySelector('img').src;
+
+    // Afficher la carte agrandie
+    carteAgrandie.innerHTML = `<img src="${imgSrc}" alt="Objet agrandi">`;
     carteAgrandie.style.display = 'block';
 
     // Désactiver les effets de mise en page normaux pendant l'agrandissement
     document.body.style.overflow = 'hidden';
+}
 
-    // Positionner la carte agrandie absolument par rapport au conteneur
-    const conteneurRect = conteneur.getBoundingClientRect();
-    const carteRect = carteAgrandie.getBoundingClientRect();
+function reduireCarte() {
+  const carteAgrandie = document.getElementById('carte-agrandie');
 
-    const topPos = (conteneurRect.height - carteRect.height) / 2;
-    const leftPos = (conteneurRect.width - carteRect.width) / 2;
+  // Cacher la carte agrandie
+  carteAgrandie.style.display = 'none';
 
-    carteAgrandie.style.top = topPos + 'px';
-    carteAgrandie.style.left = leftPos + 'px';
-  }
-
-  function reinitialiserEffet() {
-    // Réactiver les effets de mise en page normaux après l'agrandissement
-    document.body.style.overflow = 'auto';
-  }
-
-  function reduireCarte(carte) {
-    // ... (votre code existant)
-
-    // Retirez la classe agrandie de la carte
-    carte.classList.remove('agrandie');
-
-};
-
-  // Réactivez le défilement du corps lorsque la carte n'est plus agrandie
+  // Réactiver les effets de mise en page normaux après l'agrandissement
   document.body.style.overflow = 'auto';
+}
+
   
   
 
