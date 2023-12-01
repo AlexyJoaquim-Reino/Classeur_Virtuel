@@ -90,10 +90,6 @@ const cartesJSON = {
       const cardDiv = document.createElement('div');
       cardDiv.classList.add('card');
   
-      // Ajoute un gestionnaire d'événements pour chaque carte
-      cardDiv.addEventListener('mouseenter', function () {
-      });
-  
       // Crée un élément img avec l'URL de l'image
       const imgElement = document.createElement('img');
       imgElement.src = carte.url;
