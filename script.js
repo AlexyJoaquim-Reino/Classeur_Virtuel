@@ -92,7 +92,6 @@ const cartesJSON = {
   
       // Ajoute un gestionnaire d'événements pour chaque carte
       cardDiv.addEventListener('mouseenter', function () {
-        agrandirCarte(cardDiv);
       });
   
       // Crée un élément img avec l'URL de l'image
