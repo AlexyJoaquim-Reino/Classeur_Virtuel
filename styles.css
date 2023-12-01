@@ -190,7 +190,7 @@ p {
 
 .card.agrandie {
     position: absolute;
-    width:960px;
+    width:640px;
     height: 1338px;
     background-color: #211799;
     background-size:cover;
@@ -219,7 +219,7 @@ p {
  /* Styles pour la carte agrandie au centre */
 #carte-agrandie {
     position: absolute;
-    width:960px;
+    width:640px;
     height: 1338px;
     background-color: #211799;
     background-size:cover;
@@ -240,7 +240,7 @@ p {
 }
 
 #carte-agrandie img {
-    width:960px;
+    width: 640px;
     height: 1338px;
     border: 2px solid red; /* Exemple de bordure rouge au survol */
     transition: border 0.3s ease-in-out;
