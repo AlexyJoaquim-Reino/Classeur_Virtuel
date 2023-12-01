@@ -198,7 +198,7 @@ p {
 }
 
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(2);
     cursor: pointer;
     z-index: 9999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
 }
