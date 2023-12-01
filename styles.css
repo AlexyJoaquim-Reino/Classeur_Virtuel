@@ -141,6 +141,19 @@
     }
 }
 
+@keyframes haloCard {
+    0%, 100% {
+        transform: none;
+    }
+    25% {
+       transform: rotateZ(-3deg) rotateX(-7deg) rotateY(6deg);
+    }
+
+    66% {
+        transform: rotateZ(3deg) rotateX(7deg) rotateY(-6deg);
+    }
+}
+
 body {
     color :black;
     background:#fff;
