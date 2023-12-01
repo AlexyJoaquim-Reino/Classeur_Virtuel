@@ -127,16 +127,20 @@ const cartesJSON = {
   
   function agrandirCarte(carte) {
     const conteneur = document.getElementById('card-container');
+    const toutesLesCartes = document.querySelectorAll('.card');
+    toutesLesCartes.forEach(c => {
+        c.classList.remove('agrandie');
+    });
+    
+    carte.classList.add('agrandie');
+
+
     const carteAgrandie = document.getElementById('carte-agrandie');
-  
+    carteAgrandie.innerHTML = carte.innerHTML;
+    carteAgrandie.style.display = 'block';
+
     // Désactiver les effets de mise en page normaux pendant l'agrandissement
     document.body.style.overflow = 'hidden';
-
-    // Copier le contenu de la carte dans la carte agrandie
-    carteAgrandie.innerHTML = carte.innerHTML;
-  
-    // Afficher la carte agrandie
-    carteAgrandie.style.display = 'block';
 
     // Positionner la carte agrandie absolument par rapport au conteneur
     const conteneurRect = conteneur.getBoundingClientRect();
