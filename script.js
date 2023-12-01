@@ -139,6 +139,9 @@ const cartesJSON = {
 
     // Désactiver les effets de mise en page normaux pendant l'agrandissement
     document.body.style.overflow = 'hidden';
+
+    // Ajouter une classe à la carte agrandie pour appliquer des styles spécifiques
+    carteAgrandie.classList.add('agrandie');
 }
 
 function reduireCarte() {

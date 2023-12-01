@@ -238,3 +238,11 @@ p {
     max-width: 1500px; /* Largeur maximale de la boîte des cartes, ajustez selon vos besoins */
     margin: 0 auto; /* Centrer la boîte des cartes horizontalement */
 }
+
+.agrandie {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 999;
+}
