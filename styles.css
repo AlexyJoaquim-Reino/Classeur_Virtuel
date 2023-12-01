@@ -11,6 +11,7 @@
     box-shadow: -3px -3px 3px 0 rgba(#26e6f7, 0.3), 3px 3px 3px 0 rgba(#f759e4, 0.3),
     0px 0px 6px 2px rgba(#ffe759, 0.3), 0px 35px 25px -15px rgba(0, 0, 0, 0.3);
     position:relative;
+    overflow:hidden;
     display:inline-block;
     vertical-align:middle;
     margin: 20px 10px;
@@ -162,7 +163,6 @@ body {
     vertical-align: middle;
     height:100%;
     text-align:center;
-    margin:0;
 }
 
 html {
@@ -182,35 +182,74 @@ p {
 
 
 #app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position:relative;
+    perspective: 1000px;
+
 }
 
 
 .card.agrandie {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-    z-index: 999;
+    position: absolute;
+    width:640px;
+    height: 1338px;
+    background-color: #211799;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    border-radius:15px;
+    box-shadow: -3px -3px 3px 0 rgba(#26e6f7, 0.3), 3px 3px 3px 0 rgba(#f759e4, 0.3),
+    0px 0px 6px 2px rgba(#ffe759, 0.3), 0px 35px 25px -15px rgba(0, 0, 0, 0.3);
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    vertical-align:middle;
+    margin: 20px 10px;
+    animation: haloCard 15s ease infinite;
+    transition: transform 0.3s ease-in-out;
+    transform: translate(-50%, -50%) scale(1.2); /* Ajustez la valeur de l'échelle selon vos besoins */
+    z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
 }
 
+.card:hover {
+    transform: scale(1.2) translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 9999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
+    position:fixed;
+    top:50%;
+    left:50%
+}
 
+ /* Styles pour la carte agrandie au centre */
 #carte-agrandie {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+    position: absolute;
+    width:640px;
+    height: 1338px;
+    background-color: #211799;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    border-radius:15px;
+    box-shadow: -3px -3px 3px 0 rgba(#26e6f7, 0.3), 3px 3px 3px 0 rgba(#f759e4, 0.3),
+    0px 0px 6px 2px rgba(#ffe759, 0.3), 0px 35px 25px -15px rgba(0, 0, 0, 0.3);
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    vertical-align:middle;
+    margin: 20px 10px;
+    animation: haloCard 15s ease infinite;
+    transition: transform 0.3s ease-in-out;
+    transform: translate(-50%, -50%) scale(1.2); /* Ajustez la valeur de l'échelle selon vos besoins */
+    z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
 }
 
 #carte-agrandie img {
     width: 640px;
     height: 1338px;
+    border: 2px solid red; /* Exemple de bordure rouge au survol */
     transition: border 0.3s ease-in-out;
 }
 
+#carte-agrandie:hover img {
+    border: 2px solid green; /* Exemple de bordure verte au survol */
+}
 
