@@ -17,7 +17,8 @@ function dollars () {
       var style = '.card.active:before { ' + bg + ' }';
       $cards.removeClass("active");
       $card.addClass("active");
-      $(".hover").html(style); // Utilisez directement la classe .hover ici
+      console.log("Style :", style);
+      '$(".hover").css("background-position", "50% 50%");'
     }).on("mouseout", function() {
         console.log("Souris sortie de la carte !");
         $cards.removeClass("active");
