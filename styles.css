@@ -259,3 +259,21 @@ p {
     height: 1338px;
     transition: border 0.3s ease-in-out;
 }
+
+#carte-agrandie {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 9999;
+    display: none; /* Initialisez la carte comme cachée */
+    width: 640px;
+    height: 1338px;
+    background-color: #211799;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: -3px -3px 3px 0 rgba(#26e6f7, 0.3), 3px 3px 3px 0 rgba(#f759e4, 0.3),
+    0px 0px 6px 2px rgba(#ffe759, 0.3), 0px 35px 25px -15px rgba(0, 0, 0, 0.3);
+}
