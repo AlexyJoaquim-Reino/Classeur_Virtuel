@@ -89,11 +89,19 @@ const cartesJSON = {
       const cardDiv = document.createElement('div');
       cardDiv.classList.add('card', 'hover');
   
+      // Crée un élément img avec l'URL de l'image
+      const imgElement = document.createElement('img');
+      imgElement.src = carte.url;
+      imgElement.alt = carte.nom;
+  
       // Ajoutez un gestionnaire d'événements pour afficher la carte agrandie
       cardDiv.addEventListener('mouseenter', function () {
         agrandirCarte(carteAgrandie, carte.url);
       });
 
+      // Ajoute l'élément img à l'élément div
+      cardDiv.appendChild(imgElement);
+  
       // Ajoute l'élément div au conteneur
       conteneur.appendChild(cardDiv);
     }
@@ -104,6 +112,7 @@ function agrandirCarte(carteAgrandie, imageUrl) {
   carteAgrandie.style.backgroundImage = `url(${imageUrl})`;
   carteAgrandie.style.display = 'block';
 }
+  
 
 
 
