@@ -107,7 +107,7 @@ const cartesJSON = {
     }
   });
 
-function agrandirCarte(carteAgrandie, imageUrl) {
+function agrandirCarte(carte) {
    // Ajoute la classe pour désactiver l'animation de rotation
    carte.classList.add('rotate-animation');
 
@@ -132,6 +132,21 @@ function reduireCarte() {
 
   // Cacher la carte agrandie
   carteAgrandie.style.display = 'none';
+}
+
+function activerEffetAgrandissement() {
+  const toutesLesCartes = document.querySelectorAll('.card');
+
+  toutesLesCartes.forEach(carte => {
+      carte.addEventListener('mouseenter', function () {
+          agrandirCarte(carte);
+      });
+
+      carte.addEventListener('mouseleave', function () {
+          // Réinitialiser l'effet au survol lorsque la souris quitte la carte
+          reduireCarte();
+      });
+  });
 }
 
 
