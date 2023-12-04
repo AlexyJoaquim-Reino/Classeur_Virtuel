@@ -16,6 +16,7 @@
     vertical-align:middle;
     margin: 20px 10px;
     animation: haloCard 15s ease infinite;
+    transform-origin: center;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -141,6 +142,19 @@
     }
 }
 
+@keyframes haloCard {
+    0%, 100% {
+        transform: none;
+    }
+    25% {
+       transform: rotateZ(-3deg) rotateX(-7deg) rotateY(6deg);
+    }
+
+    66% {
+        transform: rotateZ(3deg) rotateX(7deg) rotateY(-6deg);
+    }
+}
+
 body {
     color :black;
     background:#fff;
@@ -217,16 +231,10 @@ p {
 }
 
 .card:hover {
-    transform: scale(1.7) !important;
-    transform: rotateZ(3deg) rotateX(7deg) rotateY(-6deg);
+    transform: scale(1.7) rotateZ(-3deg) rotateX(-7deg) rotateY(6deg);
     cursor: pointer;
     z-index: 9999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
-}
-
-.card.hover:hover {
-    transform: rotateZ(3deg) rotateX(7deg) rotateY(-6deg);
-    cursor: pointer;
-    z-index: 9999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
+    animation: none; /* Désactivez l'animation pendant le survol */
 }
 
 #card-container {
