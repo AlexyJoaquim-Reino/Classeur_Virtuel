@@ -107,31 +107,33 @@ const cartesJSON = {
     }
   });
 
-function agrandirCarte(carte) {
-   // Ajoute la classe pour désactiver l'animation de rotation
-   carte.classList.add('rotate-animation');
+// Déclarer la variable carteAgrandie en dehors de la fonction
+const carteAgrandie = document.getElementById('carte-agrandie');
 
-   // Désactiver l'animation générale de la carte
-   const toutesLesCartes = document.querySelectorAll('.card');
-   toutesLesCartes.forEach(carte => {
-       carte.style.animation = 'none';
-   });
-  // Afficher la carte agrandie avec l'image spécifiée
-  carteAgrandie.style.backgroundImage = `url(${imageUrl})`;
-  carteAgrandie.style.display = 'block';
+
+function agrandirCarte(carte) {
+  const imgSrc = carte.querySelector('img').src;
+
+  // Assurez-vous que carteAgrandie est défini
+  if (carteAgrandie) {
+      // Afficher la carte agrandie
+      carteAgrandie.innerHTML = `<img src="${imgSrc}" alt="Objet agrandi">`;
+      carteAgrandie.style.display = 'block';
+
+      // Désactiver les effets de mise en page normaux pendant l'agrandissement
+      document.body.style.overflow = 'hidden';
+  }
 }
   
 function reduireCarte() {
-  const carteAgrandie = document.getElementById('carte-agrandie');
+  // Assurez-vous que carteAgrandie est défini
+  if (carteAgrandie) {
+      // Cacher la carte agrandie
+      carteAgrandie.style.display = 'none';
 
-  // Réactiver l'animation générale de toutes les cartes
-  const toutesLesCartes = document.querySelectorAll('.card');
-  toutesLesCartes.forEach(carte => {
-      carte.classList.remove('rotate-animation');
-  });
-
-  // Cacher la carte agrandie
-  carteAgrandie.style.display = 'none';
+      // Réactiver les effets de mise en page normaux après l'agrandissement
+      document.body.style.overflow = 'auto';
+  }
 }
 
 function activerEffetAgrandissement() {
