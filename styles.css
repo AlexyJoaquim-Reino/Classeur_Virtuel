@@ -231,6 +231,7 @@ p {
 
 .card:hover {
     transform: scale(1.7) !important;
+    transform: rotateZ(3deg) rotateX(7deg) rotateY(-6deg);
     cursor: pointer;
     z-index: 9999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
 }
