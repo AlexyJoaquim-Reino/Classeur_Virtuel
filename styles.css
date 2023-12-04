@@ -155,6 +155,10 @@
     }
 }
 
+.card.rotate-animation {
+    animation: haloCard 15s ease infinite;
+}
+
 body {
     color :black;
     background:#fff;

@@ -108,6 +108,9 @@ const cartesJSON = {
   });
 
 function agrandirCarte(carteAgrandie, imageUrl) {
+   // Ajoute la classe pour désactiver l'animation de rotation
+   carte.classList.add('rotate-animation');
+
    // Désactiver l'animation générale de la carte
    const toutesLesCartes = document.querySelectorAll('.card');
    toutesLesCartes.forEach(carte => {
@@ -124,7 +127,7 @@ function reduireCarte() {
   // Réactiver l'animation générale de toutes les cartes
   const toutesLesCartes = document.querySelectorAll('.card');
   toutesLesCartes.forEach(carte => {
-      carte.style.animation = '';
+      carte.classList.remove('rotate-animation');
   });
 
   // Cacher la carte agrandie
