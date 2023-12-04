@@ -112,10 +112,12 @@ const carteAgrandie = document.getElementById('carte-agrandie');
 
 
 function agrandirCarte(carte) {
-  const imgSrc = carte.querySelector('img').src;
-
+  
   // Assurez-vous que carteAgrandie est défini
-  if (carteAgrandie) {
+  if (carteAgrandie && carte && carte.querySelector('img')) {
+
+      const imgSrc = carte.querySelector('img').src;
+
       // Afficher la carte agrandie
       carteAgrandie.innerHTML = `<img src="${imgSrc}" alt="Objet agrandi">`;
       carteAgrandie.style.display = 'block';
