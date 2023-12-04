@@ -141,6 +141,19 @@
     }
 }
 
+@keyframes haloCard {
+    0%, 100% {
+        transform: none;
+    }
+    25% {
+       transform: rotateZ(-3deg) rotateX(-7deg) rotateY(6deg);
+    }
+
+    66% {
+        transform: rotateZ(3deg) rotateX(7deg) rotateY(-6deg);
+    }
+}
+
 body {
     color :black;
     background:#fff;
@@ -208,6 +221,12 @@ p {
     transition: transform 0.3s ease-in-out;
     transform: translate(-50%, -50%) scale(1.2); /* Ajustez la valeur de l'échelle selon vos besoins */
     z-index: 9999; /* Pour s'assurer que la carte agrandie est au-dessus des autres */
+}
+
+.card.agrandie {
+    transform: scale(1.7);
+    z-index: 9999;
+    cursor: pointer;
 }
 
 .card:hover {
