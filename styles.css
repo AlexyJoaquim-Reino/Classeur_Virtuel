@@ -234,6 +234,7 @@ p {
     transform: scale(1.7) rotateZ(-3deg) rotateX(-7deg) rotateY(6deg);
     cursor: pointer;
     z-index: 9999; /* Assurez-vous que la carte survolée soit au-dessus des autres */
+    animation: none; /* Désactivez l'animation pendant le survol */
 }
 
 #card-container {
