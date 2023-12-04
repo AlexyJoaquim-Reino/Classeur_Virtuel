@@ -108,12 +108,28 @@ const cartesJSON = {
   });
 
 function agrandirCarte(carteAgrandie, imageUrl) {
+   // Désactiver l'animation générale de la carte
+   const toutesLesCartes = document.querySelectorAll('.card');
+   toutesLesCartes.forEach(carte => {
+       carte.style.animation = 'none';
+   });
   // Afficher la carte agrandie avec l'image spécifiée
   carteAgrandie.style.backgroundImage = `url(${imageUrl})`;
   carteAgrandie.style.display = 'block';
 }
   
+function reduireCarte() {
+  const carteAgrandie = document.getElementById('carte-agrandie');
 
+  // Réactiver l'animation générale de toutes les cartes
+  const toutesLesCartes = document.querySelectorAll('.card');
+  toutesLesCartes.forEach(carte => {
+      carte.style.animation = '';
+  });
+
+  // Cacher la carte agrandie
+  carteAgrandie.style.display = 'none';
+}
 
 
 
