@@ -15,7 +15,7 @@
     display:inline-block;
     vertical-align:middle;
     margin: 20px 10px;
-    animation: haloCard 15s ease infinite;
+    animation: haloCard 15s ease infinite forwards;
     transform-origin: center;
     transition: transform 0.3s ease-in-out;
 }
