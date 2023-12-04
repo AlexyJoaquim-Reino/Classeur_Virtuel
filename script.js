@@ -71,6 +71,7 @@ const cartesJSON = {
 
   function chargerCartes() {
     const conteneur = document.getElementById('card-container');
+    const carteAgrandie = document.getElementById('carte-agrandie');
   
     // Assurez-vous que l'élément avec l'ID 'card-container' existe avant de continuer
     if (!conteneur) {
@@ -91,13 +92,18 @@ const cartesJSON = {
   
       // Crée un élément div pour la carte
       const cardDiv = document.createElement('div');
-      cardDiv.classList.add('card');
+      cardDiv.classList.add('card', 'hover');
   
       // Crée un élément img avec l'URL de l'image
       const imgElement = document.createElement('img');
       imgElement.src = carte.url;
       imgElement.alt = carte.nom;
   
+      // Ajoutez un gestionnaire d'événements pour afficher la carte agrandie
+      cardDiv.addEventListener('mouseenter', function () {
+        agrandirCarte(carteAgrandie, carte.url);
+      });
+
       // Ajoute l'élément img à l'élément div
       cardDiv.appendChild(imgElement);
   
@@ -105,6 +111,12 @@ const cartesJSON = {
       conteneur.appendChild(cardDiv);
     }
   }
+
+function agrandirCarte(carteAgrandie, imageUrl) {
+  // Afficher la carte agrandie avec l'image spécifiée
+  carteAgrandie.style.backgroundImage = `url(${imageUrl})`;
+  carteAgrandie.style.display = 'block';
+}
   
 
 
