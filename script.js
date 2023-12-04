@@ -105,6 +105,8 @@ const cartesJSON = {
   };
 
   document.addEventListener('DOMContentLoaded', function () {
+
+
     const conteneur = document.getElementById('card-container');
     const carteAgrandie = document.getElementById('carte-agrandie');
   
@@ -145,6 +147,8 @@ const cartesJSON = {
       // Ajoute l'élément div au conteneur
       conteneur.appendChild(cardDiv);
     }
+
+      chargerPage(pageActuelle, 'initial');
   });
 
 // Déclarer la variable carteAgrandie en dehors de la fonction
@@ -193,13 +197,36 @@ function activerEffetAgrandissement() {
   });
 }
 
+
 const cartesParPage = 8;
 let pageActuelle = 1;
 const nombreTotalDePages = Math.ceil(cartesJSON.cartes.length / cartesParPage);
 
-function chargerPage(page) {
-  const conteneur = document.getElementById('card-container');
-  conteneur.innerHTML = ''; // Effacer le contenu actuel
+function chargerPage(page, direction) {
+
+  const nouvellePosition = (page - 1) * largeurPage * -1;
+  document.getElementById('card-container').style.transform = `translateX(${nouvellePosition}px)`;
+
+
+  // Gestion de l'opacité des boutons
+  const precedent = document.getElementById('precedent');
+  const suivant = document.getElementById('suivant');
+  precedent.style.opacity = page === 1 ? 0.5 : 1;
+  suivant.style.opacity = page === nombreTotalDePages ? 0.5 : 1;
+
+  // Gestion de l'animation des boutons
+  const navigationContainer = document.getElementById('navigation-container');
+  navigationContainer.style.opacity = '0'; // Masque les boutons pendant l'animation
+  setTimeout(() => {
+    navigationContainer.style.opacity = '1'; // Réaffiche les boutons après l'animation
+  }, 500);
+
+  // Ajouter une classe de direction pour l'animation CSS
+  conteneur.classList.add(direction);
+
+  // Effacer le contenu actuel après l'animation
+  setTimeout(() => {
+    conteneur.innerHTML = '';
 
   const debut = (page - 1) * cartesParPage;
   const fin = debut + cartesParPage;
@@ -207,26 +234,33 @@ function chargerPage(page) {
   for (let i = debut; i < fin && i < cartesJSON.cartes.length; i++) {
     const carte = cartesJSON.cartes[i];
     // Créez et ajoutez vos éléments de carte ici
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card');
+
+    const imgElement = document.createElement('img');
+    imgElement.src = carte.url;
+    imgElement.alt = carte.nom;
+
+    cardDiv.appendChild(imgElement);
+    conteneur.appendChild(cardDiv);
+
   }
+
+    // Retirez la classe de direction après le chargement de la page
+    conteneur.classList.remove(direction);
+  }, 500); // Réglez la durée de l'animation ici (en millisecondes)
 }
 
 function changerPage(direction) {
-  // Mettre à jour la variable de page
-  pageActuelle += direction;
+
+  const nouvellePage = pageActuelle + direction;
 
   // Vérifier si la nouvelle page est valide
-  if (pageActuelle < 1) {
-    pageActuelle = 1;
-  } else if (pageActuelle > nombreTotalDePages) {
-    pageActuelle = nombreTotalDePages;
+  if (nouvellePage >= 1 && nouvellePage <= nombreTotalDePages) {
+    pageActuelle = nouvellePage;
+    chargerPage(pageActuelle, direction > 0 ? 'slide-gauche' : 'slide-droite');
   }
-
-  // Charger la nouvelle page
-  chargerPage(pageActuelle);
 }
-
-// Initialisez la première page
-chargerPage(pageActuelle);
 
 
 
