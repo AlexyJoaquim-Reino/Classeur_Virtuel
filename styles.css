@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap');
 
 .card {
-    width:267px;
-    height:372px;
+    width:245px;
+    height:341px;
     background-color: #211799;
     background-size:cover;
     background-repeat:no-repeat;
@@ -16,7 +16,6 @@
     vertical-align:middle;
     margin: 20px 10px;
     animation: haloCard 15s ease infinite forwards;
-    transform-origin: center;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -177,8 +176,8 @@ header {
     background-color: #3498db;
     color: #fff;
     text-align: center;
-    padding: 20px;
-    margin-bottom: 20px; /* Ajout de la marge inférieure */
+    padding: 20px 0;
+    width:126.9%;
     
 }
 
@@ -188,8 +187,7 @@ html {
 
 h1 {
     display: block;
-    margin-top: 30px;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 p {
@@ -203,7 +201,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ajustez la hauteur selon vos besoins */
+    height: 120vh; /* Ajustez la hauteur selon vos besoins */
 }
 
 .card.agrandie {
@@ -243,15 +241,14 @@ p {
 
 #card-container {
     display: flex;
-    flex-wrap: nowrap;
-    overflow:hidden;
-    transition: transform 0.5s ease-in-out; /* Ajoute une transition pour un effet en douceur */
-
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
     gap: 20px; /* Espacement entre les cartes, ajustez selon vos besoins */
     max-width: 1500px; /* Largeur maximale de la boîte des cartes, ajustez selon vos besoins */
     margin: 0 auto; /* Centrer la boîte des cartes horizontalement */
+    padding-top:25px;
+    padding-bottom:25px;
 }
 
 .agrandie {
@@ -295,16 +292,23 @@ p {
     justify-content: space-between;
     transform: translateY(-50%);
     transition: opacity 0.5s ease-in-out; /* Ajoute une transition pour l'opacité des boutons */
-}
+  }
   
 #precedent, #suivant {
     padding: 10px;
     cursor: pointer;
     font-size: 16px;
-    opacity: 0.5; /* Opacité initiale des boutons */
-    transition: opacity 0.5s ease-in-out; /* Ajoute une transition pour l'opacité des boutons */
 }
 
-#precedent:hover, #suivant:hover {
-  opacity: 1; /* Opacité au survol des boutons */
+.credits {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width:126.9%;
+    margin-top: auto; /* Place le footer en bas de la page */
 }
