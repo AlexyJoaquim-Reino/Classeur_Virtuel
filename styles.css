@@ -42,11 +42,12 @@
 
 
     background-image: linear-gradient(
-    115deg, 
+    80deg, 
         transparent 0%, 
         rgb(0, 231, 255) 30%, 
-        rgb(255, 0, 231) 70%, 
+        hsl(54, 100%, 50%) 70%, 
     transparent 100%);
+    background-size: 300% 300%; 
 
 }
 
@@ -67,11 +68,11 @@
 
 
     background-image: linear-gradient(
-        115deg, 
+        80deg, 
         transparent 0%, 
         transparent 25%,
         rgb(0, 231, 255, 0.7)45%, 
-        rgb(255, 0, 231, 0.7) 55%, 
+        hsl(54, 100%, 50%) 70%, 
     transparent 70%,
     transparent 100%);
 }
@@ -116,43 +117,7 @@
 } 
 
 
-@keyframes haloGradient {
-    0%, 100% {
-        opacity: 0;
-        background-position: 0% 0%;
-    }
-    8% {
-        opacity: 0;    
-    }
-    19% {
-        background-position: 100% 100%;
-        opacity: 0.5;
-    }
-    35% {
-        background-position: 100% 100%;
-    }
-    55% {
-        background-position: 0% 0%;
-        opacity: 0.3;
-    }
 
-    75% {
-        opacity: 0;
-    }
-}
-
-@keyframes haloCard {
-    0%, 100% {
-        transform: none;
-    }
-    25% {
-       transform: rotateZ(-3deg) rotateX(-7deg) rotateY(6deg);
-    }
-
-    66% {
-        transform: rotateZ(3deg) rotateX(7deg) rotateY(-6deg);
-    }
-}
 
 .card.rotate-animation {
     animation: haloCard 15s ease infinite;
