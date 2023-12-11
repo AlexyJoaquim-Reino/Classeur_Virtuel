@@ -361,6 +361,41 @@
     });
   });
 
+  // Sélectionnez l'élément audio
+  const hoverSound = document.getElementById('hover-sound');
+
+  cartes.forEach((carte) => {
+      carte.addEventListener('mouseenter', () => {
+          // Lorsque la souris survole la carte, agrandissez-la et jouez le bruitage
+          agrandirCarte(carte);
+          jouerBruitage();
+      });
+
+      carte.addEventListener('mouseleave', () => {
+          // Lorsque la souris quitte la carte, rétablissez sa taille normale
+          retrecirCarte(carte);
+      });
+  });
+
+  function jouerBruitage() {
+      // Jouez le bruitage
+      hoverSound.play();
+  }
+
+  function agrandirCarte(carte) {
+    // Ajoutez le code pour agrandir la carte selon vos besoins
+    // Par exemple, vous pouvez appliquer une classe à la carte pour déclencher une animation CSS
+    carte.classList.add('active');
+  }
+
+  function retrecirCarte(carte) {
+    // Ajoutez le code pour rétablir la taille normale de la carte
+    carte.classList.remove('active');
+  }
+
+   
+
+
 
   
   
