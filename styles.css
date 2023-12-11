@@ -266,5 +266,6 @@ footer {
     text-align: center;
     padding: 10px 0;
     width:126.9%;
+    height:90px;
     margin-top: auto; /* Place le footer en bas de la page */
 }

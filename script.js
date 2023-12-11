@@ -415,6 +415,23 @@
   }
 
    
+  document.addEventListener('DOMContentLoaded', function () {
+    const boutonMusique = document.getElementById('btnMusique');
+    const musique = document.getElementById('musique');
+
+    boutonMusique.addEventListener('click', function () {
+        if (musique.paused) {
+            // Si la musique est en pause, démarrez-la
+            musique.play();
+            boutonMusique.textContent = 'Éteindre la musique';
+        } else {
+            // Si la musique est en cours de lecture, mettez-la en pause
+            musique.pause();
+            boutonMusique.textContent = 'Ajoutons une petite musique d\'ambiance ?';
+        }
+    });
+});
+
 
 
 
