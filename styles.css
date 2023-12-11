@@ -118,6 +118,10 @@ body {
     vertical-align: middle;
     height:100%;
     text-align:center;
+    background-image: url('./giphy.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
     padding: 0;
 }
@@ -264,15 +268,4 @@ footer {
     padding: 10px 0;
     width:126.9%;
     margin-top: auto; /* Place le footer en bas de la page */
-}
-
-#background-video {
-    position: fixed; /* Pour que la vidéo couvre toute la page */
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1; /* Mettez la vidéo en arrière-plan par rapport au contenu */
 }

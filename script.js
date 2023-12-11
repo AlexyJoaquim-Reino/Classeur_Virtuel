@@ -2,6 +2,10 @@
 
   const cartes = document.querySelectorAll('.card');
 
+  cartes.forEach(carte => {
+    carte.addEventListener('mouseenter', jouerBruitage);
+  });
+
   function dollars () {
       console.log("La fonction dollars est appelée !");
       var $cards = $(".card");
@@ -176,10 +180,57 @@
 
     document.addEventListener('DOMContentLoaded', function () {
 
+      const cartes = document.querySelectorAll('.card');
+      const hoverSound = document.getElementById('hoverSound');
+
+          // Fonction pour agrandir la carte
+        function agrandirCarte(carte) {
+          carte.style.transform = 'scale(1.2)';
+      }
+
+      // Fonction pour réduire la carte
+      function retrecirCarte(carte) {
+          carte.style.transform = 'scale(1)';
+      }
+
+      // Ajoutez un gestionnaire d'événements à chaque carte
+      cartes.forEach(carte => {
+          carte.addEventListener('mouseenter', function () {
+              // Jouez le son
+              hoverSound.play();
+              // Ajoutez d'autres actions, par exemple agrandir la carte
+              agrandirCarte(carte);
+          });
+
+          carte.addEventListener('mouseleave', function () {
+              // Ajoutez d'autres actions, par exemple réduire la carte
+              retrecirCarte(carte);
+          });
+      });
+
 
       const conteneur = document.getElementById('card-container');
       const carteAgrandie = document.getElementById('carte-agrandie');
     
+       // Ajoutez un gestionnaire d'événements à chaque carte
+      cartes.forEach(carte => {
+        carte.addEventListener('mouseenter', function () {
+          // Jouez le son
+          hoverSound.play();
+
+        // Ajoutez d'autres actions, par exemple agrandir la carte
+        agrandirCarte(carte);
+    });
+        carte.addEventListener('mouseleave', function () {
+          // Ajoutez d'autres actions, par exemple réduire la carte
+          reduireCarte(carte);
+        });
+
+
+
+      });
+
+
       // Assurez-vous que l'élément avec l'ID 'card-container' existe avant de continuer
       if (!conteneur) {
         console.error("Erreur : L'élément avec l'ID 'card-container' n'a pas été trouvé.");
@@ -219,39 +270,21 @@
       }
 
         chargerPage(pageActuelle, 'initial');
+
+         // Fonction pour agrandir la carte
+        function agrandirCarte(carte) {
+          carte.style.transform = 'scale(1.2)';
+        }
+
+        // Fonction pour réduire la carte
+        function reduireCarte(carte) {
+          carte.style.transform = 'scale(1)';
+        }
     });
 
   // Déclarer la variable carteAgrandie en dehors de la fonction
   const carteAgrandie = document.getElementById('carte-agrandie');
-
-
-  function agrandirCarte(carte) {
     
-    // Assurez-vous que carteAgrandie est défini
-    if (carteAgrandie && carte && carte.querySelector('img')) {
-
-        const imgSrc = carte.querySelector('img').src;
-
-        // Afficher la carte agrandie
-        carteAgrandie.innerHTML = `<img src="${imgSrc}" alt="Objet agrandi">`;
-        carteAgrandie.style.display = 'block';
-
-        // Désactiver les effets de mise en page normaux pendant l'agrandissement
-        document.body.style.overflow = 'hidden';
-    }
-  }
-    
-  function reduireCarte() {
-    // Assurez-vous que carteAgrandie est défini
-    if (carteAgrandie) {
-        // Cacher la carte agrandie
-        carteAgrandie.style.display = 'none';
-
-        // Réactiver les effets de mise en page normaux après l'agrandissement
-        document.body.style.overflow = 'auto';
-    }
-  }
-
   function activerEffetAgrandissement() {
     const toutesLesCartes = document.querySelectorAll('.card');
 
@@ -266,7 +299,6 @@
         });
     });
   }
-
 
   const cartesParPage = 10;
   let pageActuelle = 1;
@@ -361,9 +393,9 @@
     });
   });
 
-  // Sélectionnez l'élément audio
-  const hoverSound = document.getElementById('hover-sound');
 
+  document.querySelector('#carte-agrandie');
+ 
   cartes.forEach((carte) => {
       carte.addEventListener('mouseenter', () => {
           // Lorsque la souris survole la carte, agrandissez-la et jouez le bruitage
@@ -378,19 +410,8 @@
   });
 
   function jouerBruitage() {
-      // Jouez le bruitage
-      hoverSound.play();
-  }
-
-  function agrandirCarte(carte) {
-    // Ajoutez le code pour agrandir la carte selon vos besoins
-    // Par exemple, vous pouvez appliquer une classe à la carte pour déclencher une animation CSS
-    carte.classList.add('active');
-  }
-
-  function retrecirCarte(carte) {
-    // Ajoutez le code pour rétablir la taille normale de la carte
-    carte.classList.remove('active');
+    hoverSound.currentTime = 0;
+    hoverSound.play();
   }
 
    
