@@ -269,3 +269,35 @@ footer {
     height:90px;
     margin-top: auto; /* Place le footer en bas de la page */
 }
+
+#btnMusique {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Style au survol du bouton */
+#btnMusique:hover {
+    background-color: #2980b9;
+}
+
+/* Style pour le texte du bouton */
+#btnMusique::after {
+    content: "\1F3B5"; /* Emoji note de musique */
+    margin-left: 10px;
+}
+
+/* Style pour le bouton lorsque la musique est en cours de lecture */
+#btnMusique.active {
+    background-color: #e74c3c; /* Rouge */
+}
+
+/* Style au survol du bouton lorsque la musique est en cours de lecture */
+#btnMusique.active:hover {
+    background-color: #c0392b; /* Rouge plus foncé */
+}
