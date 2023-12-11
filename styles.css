@@ -111,15 +111,14 @@
 }
 
 body {
-    color :black;
-    background:#fff;
+    color :#fff;
     font-family: "Heebo", sans-serif;
     display:flex;
     justify-content:center;
     vertical-align: middle;
     height:100%;
     text-align:center;
-    background-color: yellow;
+    background-color: #000;
     margin: 0;
     padding: 0;
 }
@@ -140,6 +139,7 @@ html {
 h1 {
     display: block;
     margin: 0;
+    font-size: 24px;
 }
 
 p {
@@ -250,6 +250,8 @@ p {
     padding: 10px;
     cursor: pointer;
     font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
 }
 
 .credits {
