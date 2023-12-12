@@ -181,13 +181,15 @@
     document.addEventListener('DOMContentLoaded', function () {
 
       const cartes = document.querySelectorAll('.card');
-      const hoverSound = document.getElementById('hoverSound');
+      const hoverSound = new Howl({
+        src: ['./bruitage.mp3']
+    });
 
       // Ajoutez un gestionnaire d'événements à chaque carte
       cartes.forEach(carte => {
           carte.addEventListener('mouseenter', function () {
               // Jouez le son
-              jouerBruitage(hoverSound);
+              hoverSound.play();
 
               // Ajoutez d'autres actions, par exemple agrandir la carte
               agrandirCarte(carte);
@@ -207,11 +209,6 @@
       // Fonction pour réduire la carte
       function retrecirCarte(carte) {
         carte.style.transform = 'scale(1)';
-      }
-
-      function jouerBruitage(son) {
-        son.currentTime = 0;
-        son.play();
       }
   
       const conteneur = document.getElementById('card-container');
