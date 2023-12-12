@@ -187,7 +187,7 @@
       cartes.forEach(carte => {
           carte.addEventListener('mouseenter', function () {
               // Jouez le son
-              hoverSound.play();
+              jouerBruitage(hoverSound);
 
               // Ajoutez d'autres actions, par exemple agrandir la carte
               agrandirCarte(carte);
@@ -201,12 +201,17 @@
 
       // Fonction pour agrandir la carte
       function agrandirCarte(carte) {
-          carte.style.transform = 'scale(1.2)';
+        carte.style.transform = 'scale(1.2)';
       }
   
       // Fonction pour réduire la carte
       function retrecirCarte(carte) {
-          carte.style.transform = 'scale(1)';
+        carte.style.transform = 'scale(1)';
+      }
+
+      function jouerBruitage(son) {
+        son.currentTime = 0;
+        son.play();
       }
   
       const conteneur = document.getElementById('card-container');
@@ -251,16 +256,6 @@
       }
 
         chargerPage(pageActuelle, 'initial');
-
-         // Fonction pour agrandir la carte
-        function agrandirCarte(carte) {
-          carte.style.transform = 'scale(1.2)';
-        }
-
-        // Fonction pour réduire la carte
-        function reduireCarte(carte) {
-          carte.style.transform = 'scale(1)';
-        }
     });
 
   // Déclarer la variable carteAgrandie en dehors de la fonction
@@ -389,12 +384,6 @@
           retrecirCarte(carte);
       });
   });
-
-  function jouerBruitage() {
-    hoverSound.currentTime = 0;
-    hoverSound.play();
-  }
-
    
   document.addEventListener('DOMContentLoaded', function () {
     const boutonMusique = document.getElementById('btnMusique');
