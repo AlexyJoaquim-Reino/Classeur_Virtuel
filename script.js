@@ -183,21 +183,12 @@
       const cartes = document.querySelectorAll('.card');
       const hoverSound = document.getElementById('hoverSound');
 
-          // Fonction pour agrandir la carte
-        function agrandirCarte(carte) {
-          carte.style.transform = 'scale(1.2)';
-      }
-
-      // Fonction pour réduire la carte
-      function retrecirCarte(carte) {
-          carte.style.transform = 'scale(1)';
-      }
-
       // Ajoutez un gestionnaire d'événements à chaque carte
       cartes.forEach(carte => {
           carte.addEventListener('mouseenter', function () {
               // Jouez le son
               hoverSound.play();
+
               // Ajoutez d'autres actions, par exemple agrandir la carte
               agrandirCarte(carte);
           });
@@ -208,29 +199,19 @@
           });
       });
 
-
+      // Fonction pour agrandir la carte
+      function agrandirCarte(carte) {
+          carte.style.transform = 'scale(1.2)';
+      }
+  
+      // Fonction pour réduire la carte
+      function retrecirCarte(carte) {
+          carte.style.transform = 'scale(1)';
+      }
+  
       const conteneur = document.getElementById('card-container');
       const carteAgrandie = document.getElementById('carte-agrandie');
     
-       // Ajoutez un gestionnaire d'événements à chaque carte
-      cartes.forEach(carte => {
-        carte.addEventListener('mouseenter', function () {
-          // Jouez le son
-          hoverSound.play();
-
-        // Ajoutez d'autres actions, par exemple agrandir la carte
-        agrandirCarte(carte);
-    });
-        carte.addEventListener('mouseleave', function () {
-          // Ajoutez d'autres actions, par exemple réduire la carte
-          reduireCarte(carte);
-        });
-
-
-
-      });
-
-
       // Assurez-vous que l'élément avec l'ID 'card-container' existe avant de continuer
       if (!conteneur) {
         console.error("Erreur : L'élément avec l'ID 'card-container' n'a pas été trouvé.");
