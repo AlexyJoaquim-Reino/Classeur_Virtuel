@@ -403,7 +403,7 @@
         // Vérification de la compatibilité avec l'API Audio Web
         if (window.HTMLAudioElement) {
             // Initialisation de Howler.js
-            var carte = document.getElementById("carte-agrandie");
+            var carte = document.getElementById("card-container");
     
             var carteAudio = new Howl({
                 src: ['./Bruitage_carte.mp3'],
@@ -425,7 +425,7 @@
                     carteAudio.stop();
                 });
             } else {
-                console.error("L'élément avec l'ID 'carte-agrandie' n'a pas été trouvé.");
+                console.error("L'élément avec l'ID 'carte-container' n'a pas été trouvé.");
             }
         } else {
             console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
