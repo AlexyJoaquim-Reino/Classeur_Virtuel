@@ -256,177 +256,176 @@
   // Déclarer la variable carteAgrandie en dehors de la fonction
 
     
-  function activerEffetAgrandissement() {
-    const toutesLesCartes = document.querySelectorAll('.card');
+      function activerEffetAgrandissement() {
+        const toutesLesCartes = document.querySelectorAll('.card');
 
-    toutesLesCartes.forEach(carte => {
-        carte.addEventListener('mouseenter', function () {
-            agrandirCarte(carte);
+        toutesLesCartes.forEach(carte => {
+            carte.addEventListener('mouseenter', function () {
+                agrandirCarte(carte);
+            });
+
+            carte.addEventListener('mouseleave', function () {
+                // Réinitialiser l'effet au survol lorsque la souris quitte la carte
+                reduireCarte();
+            });
+        });
+      }
+
+      const cartesParPage = 10;
+      let pageActuelle = 1;
+      let largeurPage;
+      const nombreTotalDePages = Math.ceil(cartesJSON.cartes.length / cartesParPage);
+
+      function chargerPage(page, direction) {
+
+        const conteneur = document.getElementById('card-container');
+
+        const nouvellePosition = (page - 1) * largeurPage * -1;
+        document.getElementById('card-container').style.transform = `translateX(${nouvellePosition}px)`;
+
+
+        // Gestion de l'opacité des boutons
+        const precedent = document.getElementById('precedent');
+        const suivant = document.getElementById('suivant');
+        precedent.style.opacity = page === 1 ? 0.5 : 1;
+        suivant.style.opacity = page === nombreTotalDePages ? 0.5 : 1;
+
+        // Gestion de l'animation des boutons
+        const navigationContainer = document.getElementById('navigation-container');
+        navigationContainer.style.opacity = '0'; // Masque les boutons pendant l'animation
+        setTimeout(() => {
+          navigationContainer.style.opacity = '1'; // Réaffiche les boutons après l'animation
+        }, 500);
+
+        // Ajouter une classe de direction pour l'animation CSS
+        conteneur.classList.add(direction);
+
+        // Effacer le contenu actuel après l'animation
+        setTimeout(() => {
+          conteneur.innerHTML = '';
+
+        const debut = (page - 1) * cartesParPage;
+        const fin = debut + cartesParPage;
+        
+        for (let i = debut; i < fin && i < cartesJSON.cartes.length; i++) {
+          const carte = cartesJSON.cartes[i];
+          // Créez et ajoutez vos éléments de carte ici
+          const cardDiv = document.createElement('div');
+          cardDiv.classList.add('card');
+
+          const imgElement = document.createElement('img');
+          imgElement.src = carte.url;
+          imgElement.alt = carte.nom;
+
+          cardDiv.appendChild(imgElement);
+          conteneur.appendChild(cardDiv);
+
+        }
+
+          // Retirez la classe de direction après le chargement de la page
+          conteneur.classList.remove(direction);
+        }, 500); // Réglez la durée de l'animation ici (en millisecondes)
+      }
+
+      function changerPage(direction) {
+
+        const nouvellePage = pageActuelle + direction;
+
+        // Vérifier si la nouvelle page est valide
+        if (nouvellePage >= 1 && nouvellePage <= nombreTotalDePages) {
+          pageActuelle = nouvellePage;
+          chargerPage(pageActuelle, direction > 0 ? 'slide-gauche' : 'slide-droite');
+        }
+      }
+
+      function rétrécirCartes() {
+        const cartes = document.querySelectorAll('.carte');
+        cartes.forEach(carte => {
+            carte.classList.add('rétrécir');
+        });
+      }
+
+      function chargerPageSuivante() {
+        const nouvellesCartes = document.querySelectorAll('.nouvelle-carte');
+        nouvellesCartes.forEach(carte => {
+            carte.classList.add('agrandir');
+        });
+      }
+
+        // Ajoutez cet écouteur d'événements une fois que le DOM est chargé
+        document.addEventListener('DOMContentLoaded', function () {
+        // Assurez-vous de sélectionner les bons boutons avec les bons ID
+        document.getElementById('precedent').addEventListener('click', function () {
+            changerPage('précédent');
         });
 
-        carte.addEventListener('mouseleave', function () {
-            // Réinitialiser l'effet au survol lorsque la souris quitte la carte
-            reduireCarte();
+        document.getElementById('suivant').addEventListener('click', function () {
+            changerPage('suivant');
         });
-    });
-  }
-
-  const cartesParPage = 10;
-  let pageActuelle = 1;
-  let largeurPage;
-  const nombreTotalDePages = Math.ceil(cartesJSON.cartes.length / cartesParPage);
-
-  function chargerPage(page, direction) {
-
-    const conteneur = document.getElementById('card-container');
-
-    const nouvellePosition = (page - 1) * largeurPage * -1;
-    document.getElementById('card-container').style.transform = `translateX(${nouvellePosition}px)`;
+      });
 
 
-    // Gestion de l'opacité des boutons
-    const precedent = document.getElementById('precedent');
-    const suivant = document.getElementById('suivant');
-    precedent.style.opacity = page === 1 ? 0.5 : 1;
-    suivant.style.opacity = page === nombreTotalDePages ? 0.5 : 1;
-
-    // Gestion de l'animation des boutons
-    const navigationContainer = document.getElementById('navigation-container');
-    navigationContainer.style.opacity = '0'; // Masque les boutons pendant l'animation
-    setTimeout(() => {
-      navigationContainer.style.opacity = '1'; // Réaffiche les boutons après l'animation
-    }, 500);
-
-    // Ajouter une classe de direction pour l'animation CSS
-    conteneur.classList.add(direction);
-
-    // Effacer le contenu actuel après l'animation
-    setTimeout(() => {
-      conteneur.innerHTML = '';
-
-    const debut = (page - 1) * cartesParPage;
-    const fin = debut + cartesParPage;
+      document.querySelector('#carte-agrandie');
     
-    for (let i = debut; i < fin && i < cartesJSON.cartes.length; i++) {
-      const carte = cartesJSON.cartes[i];
-      // Créez et ajoutez vos éléments de carte ici
-      const cardDiv = document.createElement('div');
-      cardDiv.classList.add('card');
+      cartes.forEach((carte) => {
+          carte.addEventListener('mouseenter', () => {
+              // Lorsque la souris survole la carte, agrandissez-la et jouez le bruitage
+              agrandirCarte(carte);
+              jouerBruitage();
+          });
 
-      const imgElement = document.createElement('img');
-      imgElement.src = carte.url;
-      imgElement.alt = carte.nom;
-
-      cardDiv.appendChild(imgElement);
-      conteneur.appendChild(cardDiv);
-
-    }
-
-      // Retirez la classe de direction après le chargement de la page
-      conteneur.classList.remove(direction);
-    }, 500); // Réglez la durée de l'animation ici (en millisecondes)
-  }
-
-  function changerPage(direction) {
-
-    const nouvellePage = pageActuelle + direction;
-
-    // Vérifier si la nouvelle page est valide
-    if (nouvellePage >= 1 && nouvellePage <= nombreTotalDePages) {
-      pageActuelle = nouvellePage;
-      chargerPage(pageActuelle, direction > 0 ? 'slide-gauche' : 'slide-droite');
-    }
-  }
-
-  function rétrécirCartes() {
-    const cartes = document.querySelectorAll('.carte');
-    cartes.forEach(carte => {
-        carte.classList.add('rétrécir');
-    });
-  }
-
-  function chargerPageSuivante() {
-    const nouvellesCartes = document.querySelectorAll('.nouvelle-carte');
-    nouvellesCartes.forEach(carte => {
-        carte.classList.add('agrandir');
-    });
-  }
-
-    // Ajoutez cet écouteur d'événements une fois que le DOM est chargé
-    document.addEventListener('DOMContentLoaded', function () {
-    // Assurez-vous de sélectionner les bons boutons avec les bons ID
-    document.getElementById('precedent').addEventListener('click', function () {
-        changerPage('précédent');
-    });
-
-    document.getElementById('suivant').addEventListener('click', function () {
-        changerPage('suivant');
-    });
-  });
-
-
-  document.querySelector('#carte-agrandie');
- 
-  cartes.forEach((carte) => {
-      carte.addEventListener('mouseenter', () => {
-          // Lorsque la souris survole la carte, agrandissez-la et jouez le bruitage
-          agrandirCarte(carte);
-          jouerBruitage();
+          carte.addEventListener('mouseleave', () => {
+              // Lorsque la souris quitte la carte, rétablissez sa taille normale
+              retrecirCarte(carte);
+          });
       });
+      
+      document.addEventListener('DOMContentLoaded', function () {
+        const boutonMusique = document.getElementById('btnMusique');
+        const musique = document.getElementById('musique');
 
-      carte.addEventListener('mouseleave', () => {
-          // Lorsque la souris quitte la carte, rétablissez sa taille normale
-          retrecirCarte(carte);
-      });
-  });
-   
-  document.addEventListener('DOMContentLoaded', function () {
-    const boutonMusique = document.getElementById('btnMusique');
-    const musique = document.getElementById('musique');
+        boutonMusique.addEventListener('click', function () {
+            if (musique.paused) {
+                // Si la musique est en pause, démarrez-la
+                musique.play();
+                boutonMusique.textContent = 'Éteindre la musique';
+            } else {
+                // Si la musique est en cours de lecture, mettez-la en pause
+                musique.pause();
+                boutonMusique.textContent = 'Ajoutons une petite musique d\'ambiance ?';
+            }
+        });
+    });
 
-    boutonMusique.addEventListener('click', function () {
-        if (musique.paused) {
-            // Si la musique est en pause, démarrez-la
-            musique.play();
-            boutonMusique.textContent = 'Éteindre la musique';
+    /* Bruitage au survol d'une carte */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Vérification de la compatibilité avec l'API Audio Web
+        if (window.HTMLAudioElement) {
+            // Initialisation de Howler.js
+            var carteAudio = new Howl({
+              src: ['./Bruitage_carte.mp3'],
+              onload: function () {
+                  console.log("Fichier audio chargé:", carteAudio);
+                  var duree = carteAudio.duration();
+                  console.log("Durée du fichier audio:", duree);
+              }
+          }); 
+            var carte = document.getElementById("carte-agrandie");
+
+            carte.addEventListener("mouseenter", function () {
+                // Jouer le son lorsque la carte est survolée
+                carteAudio.play();
+            });
+
+            // Si vous souhaitez arrêter le son lorsque le survol se termine
+            carte.addEventListener("mouseleave", function () {
+                carteAudio.stop();
+            });
         } else {
-            // Si la musique est en cours de lecture, mettez-la en pause
-            musique.pause();
-            boutonMusique.textContent = 'Ajoutons une petite musique d\'ambiance ?';
+            console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
         }
-    });
-});
-
-/* Bruitage au survol d'une carte */
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Vérification de la compatibilité avec l'API Audio Web
-  if (window.HTMLAudioElement) {
-      // Initialisation de Howler.js
-      var carteAudio = new Howl({
-        src: ['./Bruitage_carte.mp3'],
-        onload: function () {
-            console.log("Fichier audio chargé:", carteAudio);
-            var duree = carteAudio.duration();
-            console.log("Durée du fichier audio:", duree);
-        }
-    }); 
-      var carte = document.getElementById("carte-agrandie");
-
-      carte.addEventListener("mouseenter", function () {
-          // Jouer le son lorsque la carte est survolée
-          carteAudio.play();
       });
-
-      // Si vous souhaitez arrêter le son lorsque le survol se termine
-      carte.addEventListener("mouseleave", function () {
-          carteAudio.stop();
-      });
-  } else {
-      console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
-  }
-});
 
 
 
