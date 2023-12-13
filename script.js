@@ -420,12 +420,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("mouseenter", function (event) {
-  if (event.target.classList.contains("carte")) {
+  var targetElement = event.target;
+
+  if (targetElement && targetElement.classList && targetElement.classList.contains("carte")) {
       console.log("Survolez la carte");
       carteAudio.play();
   }
 });
-
 
 
 
