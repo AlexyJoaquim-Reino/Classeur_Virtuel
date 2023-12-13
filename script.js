@@ -179,25 +179,13 @@
     };
 
     document.addEventListener('DOMContentLoaded', function () {
-      let hoverSound;
-
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
       const cartes = document.querySelectorAll('.card');
       
 
-
       // Ajoutez un gestionnaire d'événements à chaque carte
       cartes.forEach(carte => {
           carte.addEventListener('mouseenter', function () {
-
-            // Chargez le son s'il n'a pas encore été chargé
-            if (!hoverSound) {
-              hoverSound = new Howl({
-                  src: ['chemin/vers/votre/son.mp3'],
-                  context: audioContext // Utilisez le contexte audio créé au chargement de la page
-              });
-          }
               // Jouez le son
               hoverSound.play();
 
@@ -210,7 +198,7 @@
               retrecirCarte(carte);
           });
       });
-      
+
       // Fonction pour agrandir la carte
       function agrandirCarte(carte) {
         carte.style.transform = 'scale(1.2)';
@@ -407,6 +395,28 @@
             boutonMusique.textContent = 'Ajoutons une petite musique d\'ambiance ?';
         }
     });
+});
+
+/* Bruitage au survol d'une carte */
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  var carteAudio = document.getElementById("carteAudio");
+  var carte = document.querySelector(".card");
+
+  if (carte) { // Vérifiez si la carte existe avant d'ajouter des écouteurs d'événements
+      carte.addEventListener("mouseenter", function () {
+          console.log("Survolez la carte");
+          carteAudio.play();
+      });
+
+      carte.addEventListener("mouseleave", function () {
+          carteAudio.pause();
+          carteAudio.currentTime = 0;
+      });
+  } else {
+      console.error("La carte n'a pas été trouvée. Assurez-vous que votre sélecteur est correct.");
+  }
 });
 
 
