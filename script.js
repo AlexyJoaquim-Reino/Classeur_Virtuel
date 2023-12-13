@@ -406,11 +406,11 @@
           var carteAudio = new Howl({
               src: ['./Bruitage_carte.mp3'],
                 onplay: function () {
-                      console.log("Son en cours de lecture");
-                  },
-                  onend: function () {
-                      console.log("Son terminé.");
-                  }
+                    console.log("Son en cours de lecture");
+                },
+                onend: function () {
+                    console.log("Son terminé.");
+                }
               });
   
 
