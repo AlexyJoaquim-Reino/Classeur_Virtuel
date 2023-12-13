@@ -403,6 +403,8 @@
         // Vérification de la compatibilité avec l'API Audio Web
         if (window.HTMLAudioElement) {
             // Initialisation de Howler.js
+            var carte = document.getElementById("carte-agrandie");
+
             var carteAudio = new Howl({
               src: ['./Bruitage_carte.mp3'],
               onload: function () {
@@ -411,14 +413,15 @@
                   console.log("Durée du fichier audio:", duree);
               }
           }); 
-            var carte = document.getElementById("carte-agrandie");
-
-            document.addEventListener('DOMContentLoaded', function () {
-              carte.addEventListener("mouseenter", function () {
-                // Jouer le son lorsque la carte est survolée
-                carteAudio.play();
-            });
-          });
+              
+              if (carte) {
+                carte.addEventListener("mouseenter", function () {
+                    // Jouer le son lorsque la carte est survolée
+                    carteAudio.play();
+                });
+            } else {
+                console.error("L'élément avec la classe 'carte' n'a pas été trouvé.");
+            }
            
 
             // Si vous souhaitez arrêter le son lorsque le survol se termine
