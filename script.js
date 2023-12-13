@@ -187,7 +187,7 @@
       cartes.forEach(carte => {
           carte.addEventListener('mouseenter', function () {
               // Jouez le son
-              hoverSound.play();
+              carteAudio.play();
 
               // Ajoutez d'autres actions, par exemple agrandir la carte
               agrandirCarte(carte);
@@ -405,8 +405,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var carte = document.querySelector(".card");
 
   if (carte) { // Vérifiez si la carte existe avant d'ajouter des écouteurs d'événements
-      carte.addEventListener("mouseenter", function () {
-          console.log("Survolez la carte");
+      carte.addEventListener("click", function () {
+          console.log("Cliqué sur la carte");
           carteAudio.play();
       });
 
@@ -416,6 +416,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   } else {
       console.error("La carte n'a pas été trouvée. Assurez-vous que votre sélecteur est correct.");
+  }
+});
+
+document.addEventListener("mouseenter", function (event) {
+  if (event.target.classList.contains("carte")) {
+      console.log("Survolez la carte");
+      carteAudio.play();
   }
 });
 
