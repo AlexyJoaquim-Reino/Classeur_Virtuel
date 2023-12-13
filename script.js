@@ -417,12 +417,15 @@
               });
   
               if (carte) {
+                  console.log("Carte trouvée. Ajout des écouteurs d'événements.");
+
                   // Jouez le son lorsque la carte est survolée
                   carteAudio.play();
   
                   // Si vous souhaitez arrêter le son lorsque le survol se termine
                   carte.addEventListener("mouseleave", function () {
                       carteAudio.stop();
+                      console.log("Son arrêté.");
                   });
               } else {
                   console.error("L'élément avec l'ID 'card-container' n'a pas été trouvé.");
@@ -432,6 +435,7 @@
           // Ajoutez un gestionnaire d'événements à chaque carte (assurez-vous que cartes est défini)
           var cartes = document.querySelectorAll('.card');
           if (cartes) {
+              console.log("Cartes trouvées. Ajout des écouteurs d'événements.");
               cartes.forEach(carte => {
                   carte.addEventListener('mouseenter', jouerBruitage);
               });
