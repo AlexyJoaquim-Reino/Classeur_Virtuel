@@ -403,7 +403,7 @@
       // Vérification de la compatibilité avec l'API Audio Web
       if (window.HTMLAudioElement) {
           // Initialisation de Howler.js
-          var carte = document.getElementById("card-container");
+          var carte = document.getElementById("card-agrandie");
   
           function jouerBruitage() {
               // Initialisation de Howler.js à chaque survol
