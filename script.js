@@ -404,33 +404,34 @@
         if (window.HTMLAudioElement) {
             // Initialisation de Howler.js
             var carte = document.getElementById("carte-agrandie");
-
+    
             var carteAudio = new Howl({
-              src: ['./Bruitage_carte.mp3'],
-              onload: function () {
-                  console.log("Fichier audio chargé:", carteAudio);
-                  var duree = carteAudio.duration();
-                  console.log("Durée du fichier audio:", duree);
-              }
-          }); 
-              
-              if (carte) {
+                src: ['./Bruitage_carte.mp3'],
+                onload: function () {
+                    console.log("Fichier audio chargé:", carteAudio);
+                    var duree = carteAudio.duration();
+                    console.log("Durée du fichier audio:", duree);
+                }
+            });
+    
+            if (carte) {
                 carte.addEventListener("mouseenter", function () {
                     // Jouer le son lorsque la carte est survolée
                     carteAudio.play();
                 });
+    
+                // Si vous souhaitez arrêter le son lorsque le survol se termine
+                carte.addEventListener("mouseleave", function () {
+                    carteAudio.stop();
+                });
             } else {
-                console.error("L'élément avec la classe 'carte' n'a pas été trouvé.");
-            }   
-
-            // Si vous souhaitez arrêter le son lorsque le survol se termine
-            carte.addEventListener("mouseleave", function () {
-                carteAudio.stop();
-            });
+                console.error("L'élément avec l'ID 'carte-agrandie' n'a pas été trouvé.");
+            }
         } else {
             console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
         }
-      });
+    });
+    
 
 
 
