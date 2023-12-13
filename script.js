@@ -254,7 +254,7 @@
     });
 
   // Déclarer la variable carteAgrandie en dehors de la fonction
-  const carteAgrandie = document.getElementById('carte-agrandie');
+
     
   function activerEffetAgrandissement() {
     const toutesLesCartes = document.querySelectorAll('.card');
@@ -413,7 +413,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }); 
       var carte = document.getElementById("carte-agrandie");
-      console.log("Fichier audio chargé:", carteAudio);
 
       carte.addEventListener("mouseenter", function () {
           // Jouer le son lorsque la carte est survolée
