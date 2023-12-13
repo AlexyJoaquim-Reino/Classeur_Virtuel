@@ -405,12 +405,15 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.HTMLAudioElement) {
       // Initialisation de Howler.js
       var carteAudio = new Howl({
-          src: ['./Bruitage_carte.mp3']
-      });
-
+        src: ['./Bruitage_carte.mp3'],
+        onload: function () {
+            console.log("Fichier audio chargé:", carteAudio);
+            var duree = carteAudio.duration();
+            console.log("Durée du fichier audio:", duree);
+        }
+    }); 
       var carte = document.getElementById("carte-agrandie");
       console.log("Fichier audio chargé:", carteAudio);
-      console.log("Durée du fichier audio:", carteAudio.duration);
 
       carte.addEventListener("mouseenter", function () {
           // Jouer le son lorsque la carte est survolée
