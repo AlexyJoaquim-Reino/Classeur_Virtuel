@@ -399,6 +399,7 @@
 
 /* Bruitage au survol d'une carte */
 
+
 document.addEventListener("DOMContentLoaded", function () {
   // Vérification de la compatibilité avec l'API Audio Web
   if (window.HTMLAudioElement) {
@@ -408,6 +409,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       var carte = document.getElementById("carte-agrandie");
+      console.log("Fichier audio chargé:", carteAudio);
+      console.log("Durée du fichier audio:", carteAudio.duration);
 
       carte.addEventListener("mouseenter", function () {
           // Jouer le son lorsque la carte est survolée
