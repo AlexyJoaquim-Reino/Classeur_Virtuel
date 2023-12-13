@@ -416,16 +416,13 @@
     
             if (carte) {
                 carte.addEventListener("mouseenter", function () {
-                    // Jouer le son lorsque la carte est survolée
-                    carteAudio.stop().unload();
-
                     // Jouez le son lorsque la carte est survolée
                     carteAudio.play();
                 });
     
                 // Si vous souhaitez arrêter le son lorsque le survol se termine
                 carte.addEventListener("mouseleave", function () {
-                    carteAudio.stop();
+                    carteAudio.stop().unload();
                 });
             } else {
                 console.error("L'élément avec l'ID 'carte-container' n'a pas été trouvé.");
