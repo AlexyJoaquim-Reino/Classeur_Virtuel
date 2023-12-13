@@ -403,53 +403,48 @@
       // Vérification de la compatibilité avec l'API Audio Web
       if (window.HTMLAudioElement) {
           // Initialisation de Howler.js
-          var carte = document.getElementById("card-agrandie");
-  
-          function jouerBruitage() {
-              // Initialisation de Howler.js à chaque survol
-              var carteAudio = new Howl({
-                  src: ['./Bruitage_carte.mp3'],
-                  onload: function () {
-                      console.log("Fichier audio chargé:", carteAudio);
-                      var duree = carteAudio.duration();
-                      console.log("Durée du fichier audio:", duree);
+          var carteAudio = new Howl({
+              src: ['./Bruitage_carte.mp3'],
+                onplay: function () {
+                      console.log("Son en cours de lecture");
+                  },
+                  onend: function () {
+                      console.log("Son terminé.");
                   }
               });
   
-              if (carte) {
-                  console.log("Carte trouvée. Ajout des écouteurs d'événements.");
 
-                  // Jouez le son lorsque la carte est survolée
-                  carteAudio.play();
-  
-                  // Si vous souhaitez arrêter le son lorsque le survol se termine
-                  carte.addEventListener("mouseleave", function () {
-                      carteAudio.stop();
-                      console.log("Son arrêté.");
-                  });
-              } else {
-                  console.error("L'élément avec l'ID 'card-container' n'a pas été trouvé.");
-              }
-          }
-  
-          // Ajoutez un gestionnaire d'événements à chaque carte (assurez-vous que cartes est défini)
           var cartes = document.querySelectorAll('.card');
-          if (cartes) {
-              console.log("Cartes trouvées. Ajout des écouteurs d'événements.");
+
+          if (carte) {
+              console.log("Carte trouvée. Ajout des écouteurs d'événements.");
+
               cartes.forEach(carte => {
-                  carte.addEventListener('mouseenter', jouerBruitage);
-              });
-          } else {
-              console.error("Aucune carte n'a été trouvée.");
-          }
-      } else {
-          console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
-      }
+                carte.addEventListener('mouseenter', function () {
+                    // Jouez le son lorsque la carte est survolée
+                    carteAudio.play();
+                });
+            });
+        } else {
+            console.error("Aucune carte n'a été trouvée.");
+        }
+    } else {
+        console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
+    }
+
+});
+        
+
+
+
+
+
+
+
+
+
   
-      // ...
-  });
-  
-           
+      
     
 
 
