@@ -415,8 +415,7 @@
   
 
           var cartes = document.querySelectorAll('.card');
-
-          if (carte) {
+          if (cartes) {
               console.log("Carte trouvée. Ajout des écouteurs d'événements.");
 
               cartes.forEach(carte => {
@@ -431,7 +430,6 @@
     } else {
         console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
     }
-
 });
         
 
