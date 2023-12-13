@@ -413,10 +413,13 @@
           }); 
             var carte = document.getElementById("carte-agrandie");
 
-            carte.addEventListener("mouseenter", function () {
+            document.addEventListener('DOMContentLoaded', function () {
+              carte.addEventListener("mouseenter", function () {
                 // Jouer le son lorsque la carte est survolée
                 carteAudio.play();
             });
+          });
+           
 
             // Si vous souhaitez arrêter le son lorsque le survol se termine
             carte.addEventListener("mouseleave", function () {
