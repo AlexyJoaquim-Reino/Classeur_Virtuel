@@ -404,38 +404,49 @@
         if (window.HTMLAudioElement) {
             // Initialisation de Howler.js
             var carte = document.getElementById("card-container");
+  
     
-            var carteAudio = new Howl({
-                src: ['./Bruitage_carte.mp3'],
-                onload: function () {
-                    console.log("Fichier audio chargé:", carteAudio);
-                    var duree = carteAudio.duration();
-                    console.log("Durée du fichier audio:", duree);
-                }
-            });
-    
-            if (carte) {
-                carte.addEventListener("mouseenter", function () {
+            function jouerBruitage() {
+              // Initialisation de Howler.js à chaque survol
+              var carteAudio = new Howl({
+                  src: ['./Bruitage_carte.mp3'],
+                  onload: function () {
+                      console.log("Fichier audio chargé:", carteAudio);
+                      var duree = carteAudio.duration();
+                      console.log("Durée du fichier audio:", duree);
+                  }
+              });
 
-                    // Jouez le son lorsque la carte est survolée
-                    carteAudio.stop().unload().load();
-                    // Jouez le son lorsque la carte est survolée
-                    carteAudio.play();
-                });
+              if (carte) {
+                // Jouez le son lorsque la carte est survolée
+                carteAudio.play();
     
                 // Si vous souhaitez arrêter le son lorsque le survol se termine
                 carte.addEventListener("mouseleave", function () {
-                    carteAudio.stop()
+                    carteAudio.stop();
                 });
             } else {
-                console.error("L'élément avec l'ID 'carte-container' n'a pas été trouvé.");
+                console.error("L'élément avec l'ID 'carte-agrandie' n'a pas été trouvé.");
             }
-        } else {
-            console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
         }
+    
+        // Ajoutez un gestionnaire d'événements à chaque carte
+        cartes.forEach(carte => {
+            carte.addEventListener('mouseenter', jouerBruitage);
+        });
+    
+        // ...
     });
+           
     
 
+
+
+
+
+
+
+     
 
 
   
