@@ -417,6 +417,9 @@
             if (carte) {
                 carte.addEventListener("mouseenter", function () {
                     // Jouer le son lorsque la carte est survolée
+                    carteAudio.stop().unload();
+
+                    // Jouez le son lorsque la carte est survolée
                     carteAudio.play();
                 });
     
