@@ -421,8 +421,7 @@
                 });
             } else {
                 console.error("L'élément avec la classe 'carte' n'a pas été trouvé.");
-            }
-           
+            }   
 
             // Si vous souhaitez arrêter le son lorsque le survol se termine
             carte.addEventListener("mouseleave", function () {
