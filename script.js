@@ -404,6 +404,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var carteAudio = document.getElementById("carteAudio");
   var carte = document.querySelector(".card");
 
+  console.log("Fichier audio chargé:", carteAudio);
+  console.log("Durée du fichier audio:", carteAudio.duration);
+
+
   if (carte) { // Vérifiez si la carte existe avant d'ajouter des écouteurs d'événements
       carte.addEventListener("click", function () {
           console.log("Cliqué sur la carte");
