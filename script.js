@@ -406,7 +406,7 @@
             var carte = document.getElementById("card-container");
     
             var carteAudio = new Howl({
-                src: ['./Bruitage_carte.mp3'],
+                src: ['./bruitage.mp3'],
                 onload: function () {
                     console.log("Fichier audio chargé:", carteAudio);
                     var duree = carteAudio.duration();
