@@ -399,36 +399,27 @@
 
 /* Bruitage au survol d'une carte */
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  var carteAudio = document.getElementById("carteAudio");
-  var carte = document.querySelector(".card");
+  // Vérification de la compatibilité avec l'API Audio Web
+  if (window.HTMLAudioElement) {
+      // Initialisation de Howler.js
+      var carteAudio = new Howl({
+          src: ['./Bruitage_carte.mp3']
+      });
 
-  console.log("Fichier audio chargé:", carteAudio);
-  console.log("Durée du fichier audio:", carteAudio.duration);
+      var carte = document.getElementById("carte-agrandie");
 
-
-  if (carte) { // Vérifiez si la carte existe avant d'ajouter des écouteurs d'événements
-      carte.addEventListener("click", function () {
-          console.log("Cliqué sur la carte");
+      carte.addEventListener("mouseenter", function () {
+          // Jouer le son lorsque la carte est survolée
           carteAudio.play();
       });
 
+      // Si vous souhaitez arrêter le son lorsque le survol se termine
       carte.addEventListener("mouseleave", function () {
-          carteAudio.pause();
-          carteAudio.currentTime = 0;
+          carteAudio.stop();
       });
   } else {
-      console.error("La carte n'a pas été trouvée. Assurez-vous que votre sélecteur est correct.");
-  }
-});
-
-document.addEventListener("mouseenter", function (event) {
-  var targetElement = event.target;
-
-  if (targetElement && targetElement.classList && targetElement.classList.contains("carte")) {
-      console.log("Survolez la carte");
-      carteAudio.play();
+      console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
   }
 });
 
