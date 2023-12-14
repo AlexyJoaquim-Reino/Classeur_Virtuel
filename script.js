@@ -399,7 +399,7 @@
 
     /* Bruitage au survol d'une carte */
 
-var element = document.getElementById('carte-agrandie');
+var element = document.getElementById('carte-container');
 var son = document.getElementById('carteAudio');
 var audioLoaded = false;
 
