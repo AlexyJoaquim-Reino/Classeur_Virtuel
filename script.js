@@ -405,33 +405,29 @@
           // Initialisation de Howler.js
           var carteAudio = new Howl({
               src: ['./Bruitage_carte.mp3'],
-                onplay: function () {
-                    console.log("Son en cours de lecture");
-                },
-                onend: function () {
-                    console.log("Son terminé.");
-                }
-              });
+              onend: function () {
+                  console.log("Son terminé.");
+              }
+          });
   
-
+          // Ajoutez un gestionnaire d'événements à chaque carte
           var cartes = document.querySelectorAll('.card');
-          if (cartes) {
-              console.log("Carte trouvée. Ajout des écouteurs d'événements.");
-
+          if (cartes.length > 0) {
+              console.log("Cartes trouvées. Ajout des écouteurs d'événements.");
               cartes.forEach(carte => {
-                carte.addEventListener('mouseenter', function () {
-                    // Jouez le son lorsque la carte est survolée
-                    carteAudio.play();
-                });
-            });
-        } else {
-            console.error("Aucune carte n'a été trouvée.");
-        }
-    } else {
-        console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
-    }
-});
-        
+                  carte.addEventListener('mouseenter', function () {
+                      // Jouez le son lorsque la carte est survolée
+                      carteAudio.play();
+                  });
+              });
+          } else {
+              console.error("Aucune carte n'a été trouvée.");
+          }
+      } else {
+          console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
+      }
+  });
+     
 
 
 
