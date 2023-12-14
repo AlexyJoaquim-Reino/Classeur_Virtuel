@@ -399,34 +399,20 @@
 
     /* Bruitage au survol d'une carte */
 
-var element = document.getElementById('carte-container');
-var son = document.getElementById('carteAudio');
-var audioLoaded = false;
+    var carte = document.getElementById("card-container");
 
-// Préchargez le son au chargement de la page
-son.addEventListener('canplaythrough', function() {
-    audioLoaded = true;
-});
-
-// Lorsque l'utilisateur clique, si le son est préchargé, déclenchez la lecture
-document.body.addEventListener('click', function() {
-    if (audioLoaded) {
-        son.play();
+    if (carte) {
+        // Jouez le son lorsque la carte est survolée
+        carteAudio.play();
+    
+        // Si vous souhaitez arrêter le son lorsque le survol se termine
+        carte.addEventListener("mouseleave", function () {
+            carteAudio.stop();
+        });
+    } else {
+        console.error("L'élément avec l'ID 'card-container' n'a pas été trouvé.");
     }
-});
-
-// Si le son est préchargé et la souris survole l'élément, déclenchez la lecture
-element.addEventListener('mouseenter', function() {
-    if (audioLoaded) {
-        son.play();
-    }
-});
-
-// Mettez en pause le son lorsque la souris quitte l'élément
-element.addEventListener('mouseleave', function() {
-    son.pause();
-});
-
+    
 
 
 
