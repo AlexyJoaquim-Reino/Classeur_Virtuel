@@ -399,36 +399,33 @@
 
     /* Bruitage au survol d'une carte */
 
-    document.addEventListener("DOMContentLoaded", function () {
-      // Vérification de la compatibilité avec l'API Audio Web
-      if (window.HTMLAudioElement) {
-          // Initialisation de Howler.js
-          var carteAudio = new Howl({
-              src: ['./Bruitage_carte.mp3'],
-              onend: function () {
-                  console.log("Son terminé.");
-              }
-          });
-  
-          // Ajoutez un gestionnaire d'événements à chaque carte
-          var cartes = document.querySelectorAll('.card');
-          if (cartes.length > 0) {
-              console.log("Cartes trouvées. Ajout des écouteurs d'événements.");
-              cartes.forEach(carte => {
-                  carte.addEventListener('mouseenter', function () {
-                      // Jouez le son lorsque la carte est survolée
-                      carteAudio.play();
-                  });
-              });
-          } else {
-              console.error("Aucune carte n'a été trouvée.");
-          }
-      } else {
-          console.error("Votre navigateur ne prend pas en charge l'API Audio Web.");
-      }
-  });
-     
+var element = document.getElementById('carte-agrandie');
+var son = document.getElementById('carteAudio');
+var audioLoaded = false;
 
+// Préchargez le son au chargement de la page
+son.addEventListener('canplaythrough', function() {
+    audioLoaded = true;
+});
+
+// Lorsque l'utilisateur clique, si le son est préchargé, déclenchez la lecture
+document.body.addEventListener('click', function() {
+    if (audioLoaded) {
+        son.play();
+    }
+});
+
+// Si le son est préchargé et la souris survole l'élément, déclenchez la lecture
+element.addEventListener('mouseenter', function() {
+    if (audioLoaded) {
+        son.play();
+    }
+});
+
+// Mettez en pause le son lorsque la souris quitte l'élément
+element.addEventListener('mouseleave', function() {
+    son.pause();
+});
 
 
 
