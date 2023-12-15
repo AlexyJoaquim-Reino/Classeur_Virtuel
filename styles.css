@@ -19,19 +19,27 @@
     transition: transform 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
-    /* Styles spécifiques pour les écrans de 768 pixels de largeur ou moins */
-    .card {
-      width: 50%; /* Ajustez la largeur pour les écrans plus petits */
+/* Styles pour les écrans de taille plus petite (par exemple, 480px et moins) */
+@media screen and (max-width: 480px) {
+    /* Styles pour le header */
+    header {
+      /* Ajustez les styles pour les écrans encore plus petits si nécessaire */
+      font-size: 14px; /* Exemple d'ajustement de la taille de la police */
+    }
+  
+    /* Styles pour le footer */
+    footer {
+      /* Ajustez les styles pour les écrans encore plus petits si nécessaire */
+      padding: 5px; /* Exemple d'ajustement de la marge intérieure */
+    }
+  
+    /* Styles pour les boutons "Précédent" et "Suivant" */
+    #precedent, #suivant {
+      /* Ajustez les styles pour les écrans encore plus petits si nécessaire */
+      width: 80%; /* Exemple d'ajustement de la largeur */
     }
   }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
   
-
 .card > span {
     position:relative;
     top:45%;
