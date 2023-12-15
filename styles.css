@@ -238,10 +238,6 @@ p {
         flex-direction:column;
     }
 
-    #carte-agrandie {
-        width: 80%;
-    }
-
 }
 
 @media(max-width:810px){
