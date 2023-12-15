@@ -161,8 +161,12 @@ p {
 
 .header, #navigation-container, .footer {
     position:relative;
-    left:0;
-    
+    left:0;  
+}
+
+.header, .footer {
+    display:flex;
+    justify-content:center;
 }
 
 
