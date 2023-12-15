@@ -154,11 +154,12 @@ h1 {
 p {
     margin-top: 30px;
     margin-bottom: 5px;
-    width:80%;
+}
+
+.container-paragraphe {
     display:flex;
     justify-content:center;
 }
-
 
 #app {
     display: flex;
