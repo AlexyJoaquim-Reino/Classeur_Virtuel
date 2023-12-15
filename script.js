@@ -1,11 +1,3 @@
-
-
-  const cartes = document.querySelectorAll('.card');
-
-  cartes.forEach(carte => {
-    carte.addEventListener('mouseenter', jouerBruitage);
-  });
-
   function dollars () {
       console.log("La fonction dollars est appelée !");
       var $cards = $(".card");
@@ -396,23 +388,6 @@
             }
         });
     });
-
-    /* Bruitage au survol d'une carte */
-
-    var carte = document.getElementById("card-container");
-
-    if (carte) {
-        // Jouez le son lorsque la carte est survolée
-        carteAudio.play();
-    
-        // Si vous souhaitez arrêter le son lorsque le survol se termine
-        carte.addEventListener("mouseleave", function () {
-            carteAudio.stop();
-        });
-    } else {
-        console.error("L'élément avec l'ID 'card-container' n'a pas été trouvé.");
-    }
-    
 
 
 
