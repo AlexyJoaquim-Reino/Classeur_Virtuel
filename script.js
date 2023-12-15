@@ -1,27 +1,4 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-  var carte = document.getElementById("card-container");
-
-  if (carte) {
-      // Jouez le son lorsque la carte est survolée
-      carteAudio.play();
-  
-      // Si vous souhaitez arrêter le son lorsque le survol se termine
-      carte.addEventListener("mouseleave", function () {
-          carteAudio.stop();
-      });
-  } else {
-      console.error("L'élément avec l'ID 'card-container' n'a pas été trouvé.");
-  }
-
-  document.getElementById('precedent').addEventListener('click', function () {
-    changerPage('précédent');
-  });
-
-  document.getElementById('suivant').addEventListener('click', function () {
-    changerPage('suivant');
-  });
-
 const cartes = document.querySelectorAll('.card');
 
   cartes.forEach(carte => {
