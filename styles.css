@@ -252,6 +252,8 @@ p {
         color: #fff;
         text-align: center;
         margin-top: auto;
+        width: auto;
+        height:auto;
     }
 
 }
