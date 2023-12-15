@@ -242,6 +242,17 @@ p {
 
 }
 
+@media(max-width:810px){
+    .header {
+        width:100%;
+    }
+
+    .footer {
+        width: 100%;
+    }
+
+}
+
 .agrandie {
     display: block !important;
     position: fixed;
