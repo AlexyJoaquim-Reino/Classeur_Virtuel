@@ -264,19 +264,12 @@ p {
     }
 }
 
-.navigation-container {
-    text-align: center;
-    width: 100%;
-    margin: 10px 0; /* Espacement entre les boutons et les cartes */
-    display: none; /* Masquer le conteneur de navigation par défaut */
-}
-
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 480px) {
     #card-container {
         flex-direction: column; /* Empilez les cartes verticalement sur les petits écrans */
     }
 
-    .navigation-container {
+    #navigation-container {
         display: block; /* Afficher le conteneur de navigation uniquement sur les petits écrans */
     }
 }
