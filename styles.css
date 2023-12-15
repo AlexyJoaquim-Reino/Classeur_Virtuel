@@ -19,26 +19,20 @@
     transition: transform 0.3s ease-in-out;
 }
 
-/* Styles pour les écrans de taille plus petite (par exemple, 480px et moins) */
-@media screen and (max-width: 480px) {
-    /* Styles pour le header */
+/* Styles pour les écrans de taille plus petite (par exemple, 768px et moins) */
+@media screen and (max-width: 768px) {
     header {
-      /* Ajustez les styles pour les écrans encore plus petits si nécessaire */
-      font-size: 14px; /* Exemple d'ajustement de la taille de la police */
+        font-size: 18px;
     }
-  
-    /* Styles pour le footer */
+
     footer {
-      /* Ajustez les styles pour les écrans encore plus petits si nécessaire */
-      padding: 5px; /* Exemple d'ajustement de la marge intérieure */
+        padding: 10px;
     }
-  
-    /* Styles pour les boutons "Précédent" et "Suivant" */
+
     #precedent, #suivant {
-      /* Ajustez les styles pour les écrans encore plus petits si nécessaire */
-      width: 80%; /* Exemple d'ajustement de la largeur */
+        width: 100%;
     }
-  }
+}
   
 .card > span {
     position:relative;
