@@ -257,13 +257,6 @@ p {
         width: auto;
         height:auto;
     }
-
-    #card-container {
-        display:flex;
-        flex-direction:column;
-        height:50%;
-        width:50%;
-    }
 }
 
 .agrandie {
