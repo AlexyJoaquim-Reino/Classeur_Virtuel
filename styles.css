@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap');
 
 .card {
-    width:100%;
-    max-width: 245px;
-    height:;
+    width:245px;
+    height:341px;
     background-color: #211799;
     background-size:cover;
     background-repeat:no-repeat;
@@ -34,6 +33,10 @@ header {
     padding: 20px;
   }
   
+  /* Styles pour les boutons "Précédent" et "Suivant" */
+  #precedent, #suivant {
+    width: 10%; /* Exemple d'ajustement de la largeur */
+  }
   
   /* Styles pour les écrans de taille moyenne (par exemple, 768px et moins) */
   @media screen and (max-width: 768px) {
