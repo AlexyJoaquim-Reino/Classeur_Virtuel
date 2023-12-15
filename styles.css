@@ -258,7 +258,7 @@ p {
         height:auto;
     }
 
-    .card {
+    #card-container {
         display:flex;
         flex-direction:column;
         height:50%;
