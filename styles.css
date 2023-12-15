@@ -158,6 +158,14 @@ p {
     display:flex;
     justify-content:center;
 }
+
+.header, #navigation-container, .footer {
+    position:relative;
+    left:0;
+    
+}
+
+
 .card.agrandie {
     position: absolute;
     width:640px;
