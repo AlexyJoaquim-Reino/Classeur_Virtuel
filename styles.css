@@ -20,19 +20,55 @@
 }
 
 /* Styles pour les écrans de taille plus petite (par exemple, 768px et moins) */
-@media screen and (max-width: 768px) {
+
+/* Styles par défaut pour les écrans plus grands */
+
+/* Styles pour le header */
+header {
+    font-size: 24px;
+  }
+  
+  /* Styles pour le footer */
+  footer {
+    padding: 20px;
+  }
+  
+  /* Styles pour les boutons "Précédent" et "Suivant" */
+  #precedent, #suivant {
+    width: 10%; /* Exemple d'ajustement de la largeur */
+  }
+  
+  /* Styles pour les écrans de taille moyenne (par exemple, 768px et moins) */
+  @media screen and (max-width: 768px) {
+    /* Ajustez les styles pour les écrans moyens si nécessaire */
     header {
-        font-size: 18px;
+      font-size: 18px;
     }
-
+  
     footer {
-        padding: 10px;
+      padding: 10px;
     }
-
+  
     #precedent, #suivant {
-        width: 100%;
+      width: 50%; /* Exemple d'ajustement de la largeur */
     }
-}
+  }
+  
+  /* Styles pour les écrans plus petits (par exemple, 480px et moins) */
+  @media screen and (max-width: 480px) {
+    /* Ajustez les styles pour les écrans plus petits si nécessaire */
+    header {
+      font-size: 14px;
+    }
+  
+    footer {
+      padding: 5px;
+    }
+  
+    #precedent, #suivant {
+      width: 80%; /* Exemple d'ajustement de la largeur */
+    }
+  }
   
 .card > span {
     position:relative;
