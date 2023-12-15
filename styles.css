@@ -159,14 +159,6 @@ p {
     justify-content:center;
 }
 
-#app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 120vh; /* Ajustez la hauteur selon vos besoins */
-}
-
 .card.agrandie {
     position: absolute;
     width:640px;
