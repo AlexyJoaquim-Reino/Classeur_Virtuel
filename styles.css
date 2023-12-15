@@ -259,6 +259,12 @@ p {
     }
 }
 
+@media screen and (max-width: 810px) {
+    #card-container {
+        height: auto; /* Réglez la hauteur sur automatique pour s'adapter au contenu */
+    }
+}
+
 .agrandie {
     display: block !important;
     position: fixed;
