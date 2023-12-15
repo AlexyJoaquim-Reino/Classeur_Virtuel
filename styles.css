@@ -264,9 +264,11 @@ p {
     }
 }
 
-.navigation-container-top,
-.navigation-container-bottom {
-    display: none; /* Masquer les conteneurs de boutons par défaut */
+.navigation-container {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0; /* Espacement entre les boutons et les cartes */
+    display: none; /* Masquer le conteneur de navigation par défaut */
 }
 
 @media screen and (max-width: 480px) {
@@ -274,16 +276,8 @@ p {
         flex-direction: column; /* Empilez les cartes verticalement sur les petits écrans */
     }
 
-    .navigation-container-top,
-    .navigation-container-bottom {
-        display: block; /* Afficher les conteneurs de boutons uniquement sur les petits écrans */
-        text-align: center;
-        width: 100%;
-        margin: 10px 0; /* Espacement entre les boutons et les cartes */
-    }
-
-    .navigation-container-bottom {
-        order: 1; /* Changez l'ordre du conteneur de boutons en bas */
+    .navigation-container {
+        display: block; /* Afficher le conteneur de navigation uniquement sur les petits écrans */
     }
 }
 
