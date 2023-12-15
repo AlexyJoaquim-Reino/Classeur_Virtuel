@@ -278,7 +278,7 @@ p {
 
     #navigation-container {
         flex-direction:column;
-        align-items:center; 
+        justify-content:center;
     }
 
     #precedent {
