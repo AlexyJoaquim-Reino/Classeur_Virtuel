@@ -19,6 +19,14 @@
     transition: transform 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 768px) {
+    /* Styles spécifiques pour les écrans de 768 pixels de largeur ou moins */
+    .card {
+      width: 50%; /* Ajustez la largeur pour les écrans plus petits */
+    }
+  }
+
+  
 .card > span {
     position:relative;
     top:45%;
