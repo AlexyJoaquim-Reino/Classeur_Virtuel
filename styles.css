@@ -164,7 +164,7 @@ p {
     left:0;  
 }
 
-.header, .footer {
+.container-header, .container-footer {
     display:flex;
     justify-content:center;
 }
