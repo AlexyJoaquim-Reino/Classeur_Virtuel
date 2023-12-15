@@ -259,8 +259,8 @@ p {
     }
 
     .card {
-        height:auto;
-        width:auto;
+        height:50%;
+        width:50%;
     }
 }
 
