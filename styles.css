@@ -3,7 +3,7 @@
 .card {
     width:100%;
     max-width: 245px;
-    height:auto;
+    height:;
     background-color: #211799;
     background-size:cover;
     background-repeat:no-repeat;
@@ -15,7 +15,7 @@
     overflow:hidden;
     display:inline-block;
     vertical-align:middle;
-    margin: 10px;
+    margin: 20px 10px;
     animation: haloCard 15s ease infinite forwards;
     transition: transform 0.3s ease-in-out;
 }
@@ -235,7 +235,7 @@ p {
 #card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content:center;
     align-items:center;
     gap: 20px; /* Espacement entre les cartes, ajustez selon vos besoins */
     max-width: 1500px; /* Largeur maximale de la boîte des cartes, ajustez selon vos besoins */
