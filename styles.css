@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap');
 
 .card {
-    width:245px;
-    height:341px;
+    width:100%;
+    max-width: 245px;
+    height:auto;
     background-color: #211799;
     background-size:cover;
     background-repeat:no-repeat;
@@ -14,7 +15,7 @@
     overflow:hidden;
     display:inline-block;
     vertical-align:middle;
-    margin: 20px 10px;
+    margin: 10px;
     animation: haloCard 15s ease infinite forwards;
     transition: transform 0.3s ease-in-out;
 }
@@ -33,10 +34,6 @@ header {
     padding: 20px;
   }
   
-  /* Styles pour les boutons "Précédent" et "Suivant" */
-  #precedent, #suivant {
-    width: 10%; /* Exemple d'ajustement de la largeur */
-  }
   
   /* Styles pour les écrans de taille moyenne (par exemple, 768px et moins) */
   @media screen and (max-width: 768px) {
@@ -47,10 +44,6 @@ header {
   
     footer {
       padding: 10px;
-    }
-  
-    #precedent, #suivant {
-      width: 50%; /* Exemple d'ajustement de la largeur */
     }
   }
   
@@ -63,10 +56,6 @@ header {
   
     footer {
       padding: 5px;
-    }
-  
-    #precedent, #suivant {
-      width: 80%; /* Exemple d'ajustement de la largeur */
     }
   }
   
@@ -246,7 +235,7 @@ p {
 #card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
     gap: 20px; /* Espacement entre les cartes, ajustez selon vos besoins */
     max-width: 1500px; /* Largeur maximale de la boîte des cartes, ajustez selon vos besoins */
