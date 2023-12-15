@@ -155,6 +155,8 @@ p {
     margin-top: 30px;
     margin-bottom: 5px;
     width:80%;
+    display:flex;
+    justify-content:center;
 }
 
 
