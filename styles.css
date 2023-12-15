@@ -264,6 +264,10 @@ p {
     }
 }
 
+.navigation-container-top,
+.navigation-container-bottom {
+    display: none; /* Masquer les conteneurs de boutons par défaut */
+}
 
 @media screen and (max-width: 480px) {
     #card-container {
