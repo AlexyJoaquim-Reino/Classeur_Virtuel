@@ -278,6 +278,7 @@ p {
 
     .navigation-container {
         display: block; /* Afficher le conteneur de navigation uniquement sur les petits écrans */
+        flex-direction: column;
     }
 }
 
