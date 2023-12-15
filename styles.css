@@ -281,14 +281,6 @@ p {
         align-items:center;
         width:60%;
     }
-
-    #precedent {
-        align-self: flex-start; /* Place l'élément en haut */
-    }
-      
-    #suivant {
-        align-self: flex-end; /* Place l'élément en bas */
-    }
 }
 
 
