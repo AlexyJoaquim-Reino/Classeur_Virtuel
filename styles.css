@@ -258,6 +258,10 @@ p {
         height:auto;
     }
 
+    .card {
+        height:auto;
+        width:auto;
+    }
 }
 
 .agrandie {
