@@ -103,6 +103,18 @@ const cartes = document.querySelectorAll('.card');
               "url": "https://imgur.com/aadpmZs.jpg"
             },
             {
+              "nom": "Raikou EX full art",
+              "url": "https://imgur.com/l1d5eEl.jpg"
+            },
+            {
+              "nom": "Suicune EX full art",
+              "url": "https://imgur.com/YpR1gWR.jpg"
+            },
+            {
+              "nom": "Entei EX full art",
+              "url": "https://imgur.com/i9oVwDK.jpg"
+            },
+            {
               "nom": "Sonic Trinité full art",
               "url": "https://imgur.com/OWDY5cM.jpg"
             },
@@ -145,6 +157,18 @@ const cartes = document.querySelectorAll('.card');
             {
               "nom": "Totegarda chromatique trinité full art fantôme",
               "url": "https://imgur.com/uZnX1K3.jpg"
+            },
+            {
+              "nom": "Raikou EX full art fantôme",
+              "url": "https://imgur.com/t7ANx7t.jpg"
+            },
+            {
+              "nom": "Suicune EX full art fantôme",
+              "url": "https://imgur.com/6RTYDsP.jpg"
+            },
+            {
+              "nom": "Entei EX full art fantôme",
+              "url": "https://imgur.com/GskvhvS.jpg"
             },
             {
               "nom": "Le dragon dorée évolué gold secrète full art",
