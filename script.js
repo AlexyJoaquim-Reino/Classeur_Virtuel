@@ -92,15 +92,15 @@ const cartes = document.querySelectorAll('.card');
             },
             {
               "nom": "Flamerax EX full art",
-              "url": "https://imgur.com/MrdxRFO.jpg"
+              "url": "https://imgur.com/avlsrKG.jpg"
             },
             {
               "nom": "Mizusar EX full art",
-              "url": "https://imgur.com/6t4UpDH.jpg"
+              "url": "https://imgur.com/p7nVkBY.jpg"
             },
             {
               "nom": "Optoger EX full art",
-              "url": "https://imgur.com/aadpmZs.jpg"
+              "url": "https://imgur.com/ggIuHI0.jpg"
             },
             {
               "nom": "Raikou EX full art",
@@ -176,15 +176,15 @@ const cartes = document.querySelectorAll('.card');
             },
             {
               "nom": "Flamerax EX full art gold secrète",
-              "url": "https://imgur.com/TWYWTVW.jpg"
+              "url": "https://imgur.com/ZBHVlXO.jpg"
             },
             {
               "nom": "Mizusar EX full art gold secrète",
-              "url": "https://imgur.com/ebfNtD3.jpg"
+              "url": "https://imgur.com/ZwpxeSx.jpg"
             },
             {
               "nom": "Optoger EX full art gold secrète",
-              "url": "https://imgur.com/69bby4P.jpg"
+              "url": "https://imgur.com/KIPJurq.jpg"
             },
             {
               "nom": "Exagide et Palkia Légende Partie 1",
