@@ -127,8 +127,8 @@ const cartes = document.querySelectorAll('.card');
               "url": "https://imgur.com/HoFPWep.jpg"
             },
             {
-              "nom": "Méga Braségali EX full art alternative",
-              "url": "https://imgur.com/Cd0szrc.jpg"
+              "nom": "Méga Braségali EX full art",
+              "url": "https://imgur.com/icMXine.jpg"
             },
             {
               "nom": "Shulk EX full art alternative",
