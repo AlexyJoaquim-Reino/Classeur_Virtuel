@@ -36,167 +36,167 @@ const cartes = document.querySelectorAll('.card');
       "cartes": [
           {
               "nom": "Arceus EX full art",
-              "url": "https://imgur.com/xiJF6at.png"
+              "url": "./cartes/Arceus_EX_Illustration pleine carte.png"
             },
             {
               "nom": "Kaio EX full Art",
-              "url": "https://imgur.com/7KPi4Vh.png"
+              "url": "./cartes/KAIO_EX_FULL_ART.png"
             },
             {
               "nom": "Hydre Terrestre EX full art",
-              "url": "https://imgur.com/68S8rg0.jpg"
+              "url": "./cartes/Hydre Terrestre EX illustration pleine carte.jpg"
             },
             {
               "nom": "Jet Bahamut EX full art",
-              "url": "https://imgur.com/Hb00mGF.jpg"
+              "url": "./cartes/Jet Bahamut EX full art.jpg"
             },
             {
               "nom": "Lugia EX full art",
-              "url": "https://imgur.com/1mfJW83.jpg"
+              "url": "./cartes/LUGIA EX FULL ART.jpg"
             },
             {
               "nom": "Missigno, 1ère forme full art",
-              "url": "https://imgur.com/7idD1EY.png"
+              "url": "./cartes/Missigno 1ère forme Full Art.png"
             },
             {
               "nom": "Missigno, forme semi-complète",
-              "url": "https://imgur.com/vnD64v3.png"
+              "url": "./cartes/Missigno Forme semi-complète.png"
             },
             {
               "nom": "Boss ultime de la 4e classe : Missigno forme complète full art",
-              "url": "https://imgur.com/mNSoej9.jpg"
+              "url": "./cartes/Missigno forme complète copie.jpg"
             },
             {
               "nom": "Yveltal EX full art alternative",
-              "url": "https://imgur.com/bBuMv7u.jpg"
+              "url": "./cartes/Yveltal EX full art.jpg"
             },
             {
               "nom": "Meta Knight EX full art alternative",
-              "url": "https://imgur.com/quXi5q1.jpg"
+              "url": "./cartes/Meta Knight ex full art.jpg"
             },
             {
               "nom": "Asta EX full art alternative",
-              "url": "https://imgur.com/AEjZxhE.jpg"
+              "url": "./cartes/Asta EX full art.jpg"
             },
             {
               "nom": "Exagide forme parade EX full art alternative",
-              "url": "https://imgur.com/3rlreK6.jpg"
+              "url": "./cartes/Exagide forme Parade Ex full art.jpg"
             },
             {
               "nom": "Exagide forme assaut EX full art alternative",
-              "url": "https://imgur.com/agMtZRc.jpg"
+              "url": "./cartes/Exagide Ex full art.jpg"
             },
             {
               "nom": "Chevalier Dragon EX full art alternative",
-              "url": "https://imgur.com/KRrVfEH.jpg"
+              "url": "./cartes/Chevalier Dragon EX full art.jpg"
             },
             {
               "nom": "Flamerax EX full art",
-              "url": "https://imgur.com/avlsrKG.jpg"
+              "url": "./cartes/Flamerax_EX_full_art.jpg"
             },
             {
               "nom": "Mizusar EX full art",
-              "url": "https://imgur.com/p7nVkBY.jpg"
+              "url": "./cartes/Mizuzar_EX_full_art.jpg"
             },
             {
               "nom": "Optoger EX full art",
-              "url": "https://imgur.com/ggIuHI0.jpg"
+              "url": "./cartes/Optoger_EX_full_Art.jpg"
             },
             {
               "nom": "Raikou EX full art",
-              "url": "https://imgur.com/l1d5eEl.jpg"
+              "url": "./cartes/Raikou EX full art.jpg"
             },
             {
               "nom": "Suicune EX full art",
-              "url": "https://imgur.com/YpR1gWR.jpg"
+              "url": "./cartes/Suicune EX full art - Copie.jpg"
             },
             {
               "nom": "Entei EX full art",
-              "url": "https://imgur.com/i9oVwDK.jpg"
+              "url": "./cartes/Entei EX full art copie.jpg"
             },
             {
               "nom": "Sonic Trinité full art",
-              "url": "https://imgur.com/OWDY5cM.jpg"
+              "url": "./cartes/Sonic_trinite_full_art_copie.jpg"
             },
             {
               "nom": "Totegarda chromatique trinité full art",
-              "url": "https://imgur.com/9O95me9.jpg"
+              "url": "./cartes/Shiny_Totegarda-1.jpg"
             },
             {
               "nom": "Poussifeu EX full art alternative",
-              "url": "https://imgur.com/HoFPWep.jpg"
+              "url": "./cartes/Poussifeu EX full art.jpg"
             },
             {
               "nom": "Méga Braségali EX full art",
-              "url": "https://imgur.com/icMXine.jpg"
+              "url": "./cartes/Mega Braségali EX full art copie.jpg"
             },
             {
               "nom": "Shulk EX full art alternative",
-              "url": "https://imgur.com/9iVbGS4.jpg"
+              "url": "./cartes/Shulk EX full art.jpg"
             },
             {
               "nom": "Projet Yasuo EX full art",
-              "url": "https://imgur.com/j6cT5CQ.jpg"
+              "url": "./cartes/Projet Yasuo EX Full Art.jpg"
             },
             {
               "nom": "True damage Yasuo EX full art",
-              "url": "https://imgur.com/hEjyxzz.jpg"
+              "url": "./cartes/Yasuo EX full art true damage.jpg"
             },
             {
               "nom": "Le champion du tachi EX full art alternative",
-              "url": "https://imgur.com/ZyQImQv.jpg"
+              "url": "./cartes/Le champion du tachi.jpg"
             },
             {
               "nom": "Rallen EX full art alternative",
-              "url": "https://imgur.com/y8M2WKR.jpg"
+              "url": "./cartes/Rallen EX Full Art.jpg"
             },
             {
               "nom": "Sonic trinité full art fantôme",
-              "url": "https://imgur.com/DwvAi5b.jpg"
+              "url": "./cartes/Sonic_trinite_full_art_fantome_copie.jpg"
             },
             {
               "nom": "Totegarda chromatique trinité full art fantôme",
-              "url": "https://imgur.com/uZnX1K3.jpg"
+              "url": "./cartes/Shiny_Totegarda_fantome.jpg"
             },
             {
               "nom": "Raikou EX full art fantôme",
-              "url": "https://imgur.com/t7ANx7t.jpg"
+              "url": "./cartes/Raikou EX full art fantôme.jpg"
             },
             {
               "nom": "Suicune EX full art fantôme",
-              "url": "https://imgur.com/6RTYDsP.jpg"
+              "url": "./cartes/Suicune EX full art fantôme copie.jpg"
             },
             {
               "nom": "Entei EX full art fantôme",
-              "url": "https://imgur.com/GskvhvS.jpg"
+              "url": "./cartes/Entei EX full art fantôme copie.jpg"
             },
             {
               "nom": "Le dragon dorée évolué gold secrète full art",
-              "url": "https://imgur.com/7cSt9e4.jpg"
+              "url": "./cartes/Le Dragon Dorée évoluée EX FULL ART (secrete rare).jpg"
             },
             {
               "nom": "Flamerax EX full art gold secrète",
-              "url": "https://imgur.com/ZBHVlXO.jpg"
+              "url": "./cartes/Flamerax EX full art GOLD.jpg"
             },
             {
               "nom": "Mizusar EX full art gold secrète",
-              "url": "https://imgur.com/ZwpxeSx.jpg"
+              "url": "./cartes/Mizuzar EX full art GOLD.jpg"
             },
             {
               "nom": "Optoger EX full art gold secrète",
-              "url": "https://imgur.com/KIPJurq.jpg"
+              "url": "./cartes/Optoger EX full art gold.jpg"
             },
             {
               "nom": "Exagide et Palkia Légende Partie 1",
-              "url": "https://imgur.com/WptwKaa.jpg"
+              "url": "./cartes/Exagide et Palkia Legend Partie 1.jpg"
             },
             {
               "nom": "Exagide et Palkia Légende Partie 2",
-              "url": "https://imgur.com/29EV2lU.jpg"
+              "url": "./cartes/Exagide et Palkia Legend Partie 2.jpg"
             },
             {
               "nom": "Exagide et Palkia Légende Partie 3",
-              "url": "https://imgur.com/kbRIwQg.jpg"
+              "url": "./cartes/Exagide et Palkia Legend Partie 3.jpg"
             },
       ]
     };
